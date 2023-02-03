@@ -2,10 +2,11 @@ import { ICount } from "interface";
 import styled from "styled-components";
 
 export const ProgressBarContainer = styled.div`
-    max-width: 350px;
+    max-width: 450px;
     width:100%;
     height:40px;
     margin: 0 auto;
+    margin-top:10px;
     border: 4px solid #8F8C8F;
     display: flex;
     align-items: center;
@@ -30,6 +31,6 @@ export const ProgressBarIndicator = styled.div<ICount>`
     transition: width 0.3s;
     width:0%;
     ${({ count }) => count && `
-        width: calc(${count} * 10%);
+        width: calc(${count} * 4%);
     `}
 `

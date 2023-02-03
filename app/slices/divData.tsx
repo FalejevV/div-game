@@ -2,8 +2,8 @@ import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { IDiv, IPosition } from "interface";
 
 const initialState:IDiv= {
-    left:50,
-    top:50,
+    left:30,
+    top:25,
     fails:0,
 }
 

@@ -75,12 +75,16 @@ function DivButton(){
         
         let failValue = Math.floor(Math.random() * (userDataSelector.failLevel - 1) + 1);
 
-        if(divDataSelector.fails + failValue >= 10){
-            dispatch(setFails(0));
+        if(divDataSelector.fails + failValue === 25){
+            dispatch(setFails(divDataSelector.fails + failValue));
             randomLeft = 50;
             randomTop = 50;
         }else{
-            dispatch(setFails(divDataSelector.fails + failValue));
+            if(divDataSelector.fails + failValue >= 26){
+                dispatch(setFails(0)); 
+            }else{
+                dispatch(setFails(divDataSelector.fails + failValue));
+            }
         }
 
         dispatch(setPosition({left:randomLeft, top:randomTop}));

@@ -31,3 +31,8 @@ export interface IHelpers{
     juniorDeveloper:number,
     seniorDeveloper:number,
 }
+
+export interface IButton{
+    image?:string,
+    toggle?:boolean
+}

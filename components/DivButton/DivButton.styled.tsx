@@ -29,7 +29,7 @@ export const DivButtonImagePress = styled(Image)`
 export const DivBittonContainer = styled.div<IToggle>`
     width:100%;
     max-width:180px;
-    aspect-ratio: 1 / 2;
+    aspect-ratio: 1 / 1.1;
     cursor: pointer;
     margin: 0 auto;
     position: relative;

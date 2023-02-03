@@ -1,9 +1,7 @@
 import Head from 'next/head'
-import DivObject from 'components/DivObject/DivObject'
 import { Provider } from 'react-redux'
 import {store} from "../../app/store";
-import DivButton from 'components/DivButton/DivButton';
-import ProgressBar from 'components/ProgressBar/ProgressBar';
+import MainWindow from 'layouts/MainWindow/MainWindow';
 
 export default function Home() {
   return (
@@ -13,10 +11,8 @@ export default function Home() {
         <meta name="description" content="Website about centering a div. endlessly..." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      
-      <DivObject/>
-      <ProgressBar />
-      <DivButton />
+
+      <MainWindow />
     </Provider>
   )
 }

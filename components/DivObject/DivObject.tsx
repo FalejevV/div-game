@@ -9,11 +9,10 @@ import { useState } from "react";
 function DivObject(){
     let divData = useAppSelector((state:RootState) => state.divData);
     return(
-        <Wrapper>
-            <DivObjectBoardContainer>
-                <DivObjectItself left={divData.left} top={divData.top}/>
-            </DivObjectBoardContainer>  
-        </Wrapper>
+        <DivObjectBoardContainer>
+            <DivObjectItself left={divData.left} top={divData.top}/>
+        </DivObjectBoardContainer>  
+
     )
 }
 

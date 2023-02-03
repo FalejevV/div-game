@@ -6,9 +6,6 @@ export const DivObjectBoardContainer = styled.div`
     width:100%;
     max-width:1000px;
     aspect-ratio: 16 / 10;
-    margin: 0 auto;
-    margin-top:100px;
-    padding:15px;
     position: relative;
 
     background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%2300000042' stroke-width='9' stroke-dasharray='5%2c20' stroke-dashoffset='35' stroke-linecap='square'/%3e%3c/svg%3e");
