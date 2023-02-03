@@ -23,6 +23,7 @@ function DivButton(){
                 moveDiv();
             }
         });
+        
         addEventListener("keyup", function (e:KeyboardEvent) {
             if(e.key === "Enter"){
                 if (e.repeat) {
@@ -56,7 +57,7 @@ function DivButton(){
     
         }
     },[]);
-    
+
     function moveDiv(){
         if(debounce){
             return;
