@@ -3,6 +3,7 @@ import DivObject from 'components/DivObject/DivObject'
 import { Provider } from 'react-redux'
 import {store} from "../../app/store";
 import DivButton from 'components/DivButton/DivButton';
+import ProgressBar from 'components/ProgressBar/ProgressBar';
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       </Head>
       
       <DivObject/>
+      <ProgressBar />
       <DivButton />
     </Provider>
   )

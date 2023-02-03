@@ -5,7 +5,7 @@ import styled, { css } from "styled-components";
 export const DivObjectBoardContainer = styled.div`
     width:100%;
     max-width:1000px;
-    aspect-ratio: 1.5 / 1;
+    aspect-ratio: 16 / 10;
     margin: 0 auto;
     margin-top:100px;
     padding:15px;
@@ -32,6 +32,7 @@ export const DivObjectItself = styled.div<IPosition>`
     background-color:#ffffff2c;
     border:2px solid black;
     position:absolute;
+    transition: all 0.3s;
     left: ${({ left }) => left+"%" || '50%'};
     top: ${({ top }) => top+"%" || '50%'};
     transform: translate(-50%, -50%);

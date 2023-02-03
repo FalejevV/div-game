@@ -1,9 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit'
 import divData from './slices/divData'
+import userData from './slices/userData'
+import helperData from './slices/helperData'
 
 export const store = configureStore({
   reducer: {
-    divData
+    divData,
+    userData,
+    helperData
   },
 })
 

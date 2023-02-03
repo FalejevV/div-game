@@ -21,5 +21,5 @@ const divSlice = createSlice({
     }
 })
 
-export const { setPosition } = divSlice.actions;
+export const { setPosition, setFails } = divSlice.actions;
 export default divSlice.reducer

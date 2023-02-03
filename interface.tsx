@@ -9,6 +9,25 @@ export interface IDiv{
     fails:number
 }
 
+export interface ICount{
+    count:number,
+}
+
 export interface IToggle{
     toggle: boolean
+}
+
+export interface IUser{
+    money:number,
+    failLevel:number,
+    keyLevel:number,
+}
+
+export interface IHelpers{
+    bug:number,
+    rat:number,
+    bugHorde:number,
+    forumGuy:number,
+    juniorDeveloper:number,
+    seniorDeveloper:number,
 }

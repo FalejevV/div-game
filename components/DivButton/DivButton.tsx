@@ -1,16 +1,19 @@
-import { useAppDispatch } from "app/hooks";
-import { setPosition } from "app/slices/divData";
+import { useAppDispatch, useAppSelector } from "app/hooks";
+import { setFails, setPosition } from "app/slices/divData";
 import { useEffect, useState } from "react";
 import { DivBittonContainer, DivButtonImage, DivButtonImagePress } from "./DivButton.styled";
 import enterImage from "../../public/img/enter.png";
 import enterImagePressed from "../../public/img/enter-press.png";
+import { RootState } from "app/store";
 
 function DivButton(){
-    
+    let divDataSelector = useAppSelector((state:RootState) => state.divData);
+    let userDataSelector = useAppSelector((state:RootState) => state.userData);
     let dispatch = useAppDispatch();
     const [debounce,setDebounce] = useState(false);
     const [keyPress, setKeyPress] = useState(false);
     
+    // Handle Enter key press on keyboard.
     useEffect(() => {
         addEventListener("keypress", function (e:KeyboardEvent) {
             if(e.key === "Enter"){
@@ -57,7 +60,8 @@ function DivButton(){
     
         }
     },[]);
-
+    
+    
     function moveDiv(){
         if(debounce){
             return;
@@ -65,9 +69,20 @@ function DivButton(){
         setDebounce(true);
         setTimeout(() => {
             setDebounce(false);
-        }, 100);
+        }, 10  );
         let randomLeft = Math.floor(Math.random() * (85 - 10) + 10);
         let randomTop = Math.floor(Math.random() * (85 - 10) + 10);
+        
+        let failValue = Math.floor(Math.random() * (userDataSelector.failLevel - 1) + 1);
+
+        if(divDataSelector.fails + failValue >= 10){
+            dispatch(setFails(0));
+            randomLeft = 50;
+            randomTop = 50;
+        }else{
+            dispatch(setFails(divDataSelector.fails + failValue));
+        }
+
         dispatch(setPosition({left:randomLeft, top:randomTop}));
     }
 
