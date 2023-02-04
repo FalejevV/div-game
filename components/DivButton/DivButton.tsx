@@ -9,11 +9,12 @@ import { RootState } from "app/store";
 function DivButton(){
     let divDataSelector = useAppSelector((state:RootState) => state.divData);
     let userDataSelector = useAppSelector((state:RootState) => state.userData);
+
     let dispatch = useAppDispatch();
     const [debounce,setDebounce] = useState(false);
     const [keyPress, setKeyPress] = useState(false);
-    
-    // Handle Enter key press on keyboard.
+
+    // Handle Enter key press on keyboard.(keyPrass state change)
     useEffect(() => {
         addEventListener("keypress", function (e:KeyboardEvent) {
             if(e.key === "Enter"){
@@ -23,7 +24,6 @@ function DivButton(){
                 if(keyPress === false){
                     setKeyPress(true);
                 }
-                moveDiv();
             }
         });
         
@@ -60,8 +60,13 @@ function DivButton(){
     
         }
     },[]);
-    
-    
+    // Call moveDiv() when keyPress === false.
+    useEffect(() => {
+        if(!keyPress){
+            moveDiv();
+        }
+    },[keyPress]);
+
     function moveDiv(){
         if(debounce){
             return;
@@ -69,12 +74,14 @@ function DivButton(){
         setDebounce(true);
         setTimeout(() => {
             setDebounce(false);
-        }, 10  );
+        }, 25);
         let randomLeft = Math.floor(Math.random() * (85 - 10) + 10);
         let randomTop = Math.floor(Math.random() * (85 - 10) + 10);
-        
+        if(randomLeft === 50 && randomTop === 50){
+            console.log("LOLZ");
+            dispatch(setFails(25));
+        }
         let failValue = Math.floor(Math.random() * (userDataSelector.failLevel - 1) + 1);
-
         if(divDataSelector.fails + failValue === 25){
             dispatch(setFails(divDataSelector.fails + failValue));
             randomLeft = 50;
