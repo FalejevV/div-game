@@ -15,15 +15,12 @@ const userSlice = createSlice({
         setMoney(state, action:PayloadAction<number>){
             state.money += action.payload;
         },
-        setFailLevel(state, action:PayloadAction<number>){
-            state.failLevel += action.payload;
-        },
-        setKeyLevel(state, action:PayloadAction<number>){
-            state.keyLevel += action.payload;
+        upgradeLevel(state, action:PayloadAction<keyof IUser>){
+            state[action.payload] += 1;
         }
     }
 })
 
-export const { setMoney, setFailLevel, setKeyLevel } = userSlice.actions;
+export const { setMoney, upgradeLevel} = userSlice.actions;
 
 export default userSlice.reducer;

@@ -14,7 +14,7 @@ export interface ICount{
 }
 
 export interface IToggle{
-    toggle: boolean
+    istoggled: boolean
 }
 
 export interface IUser{
@@ -34,5 +34,14 @@ export interface IHelpers{
 
 export interface IButton{
     image?:string,
-    toggle?:boolean
+    isToggled?:boolean
+}
+
+export interface IUpgrade{
+    imageAlt:string,
+    imageSrc:string,
+    text:string,
+    level:keyof IUser,
+    price:number,
+    priceMultiplier:number,
 }

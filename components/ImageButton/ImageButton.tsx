@@ -11,11 +11,11 @@ function ImageButton(props:{
     offImage:string,
     onImage:string,
     function:Function,
-    toggle:boolean,
+    istoggled:boolean,
 }){
 
     return(
-        <ImageButtonContainer toggle={props.toggle} onClick={() => props.function()}>
+        <ImageButtonContainer istoggled={props.istoggled} onClick={() => props.function()}>
             <ImageButtonOFF width={props.width || "70"} height={props.height || "70"} alt={props.alt} src={props.offImage} />
             <ImageButtonON width={props.width || "70"} height={props.height || "70"} alt={props.alt} src={props.onImage} />
         </ImageButtonContainer>

@@ -6,9 +6,7 @@ export const ShopWindowContainer = styled.div<IToggle>`
     max-width: 400px;
     width:100%;
     height:500px;
-    scrollbar-width: none;
-    overflow-y: scroll;
-    overflow-x: hidden;
+    overflow-y: hidden;
     padding:15px;
     background-color: #babeb1;
     z-index: 100;
@@ -16,10 +14,13 @@ export const ShopWindowContainer = styled.div<IToggle>`
     left:-100vw;
     top:95px;
     transition: left 0.3s;
-    border:5px solid black;
-    ${({ toggle }) => toggle && css`
+    border:5px solid #69412ece;
+    ${({ istoggled }) => istoggled && css`
         left:15px;
     `}
+    display:flex;
+    flex-direction: column;
+    gap:25px;
 `
 
 export const ShopWindowHeaderContainer = styled.div`
@@ -29,6 +30,7 @@ export const ShopWindowHeaderContainer = styled.div`
     justify-content: space-between;
     align-items: center;
     gap:15px;
+    user-select: none;
 `
 
 export const ShopWindowHeaderTabs = styled.div`

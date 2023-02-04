@@ -104,7 +104,7 @@ function DivButton(){
     }
 
     return(
-        <DivBittonContainer toggle={keyPress} onClick={moveDiv}>
+        <DivBittonContainer istoggled={keyPress} onClick={moveDiv}>
             <DivButtonImage alt='enter-button' width="240" height="120" src={enterImage}/>
             <DivButtonImagePress alt='enter-button' width="240" height="120" src={enterImagePressed} />
         </DivBittonContainer>

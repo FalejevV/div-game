@@ -35,7 +35,7 @@ export const ImageButtonContainer = styled.div<IToggle>`
         filter: brightness(1.1);
     }
     
-    ${({ toggle }) => toggle && css`
+    ${({ istoggled }) => istoggled && css`
         ${ImageButtonOFF}{
             opacity:0;
         }

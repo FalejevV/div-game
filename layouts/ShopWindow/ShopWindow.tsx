@@ -4,6 +4,7 @@ import { RootState } from "app/store";
 import ImageButton from "components/ImageButton/ImageButton";
 import { useState } from "react";
 import { ShopWindowContainer, ShopWindowHeaderContainer, ShopWindowHeaderTabs } from "./ShopWindow.styled";
+import UpgradesTab from "./UpgradesTab";
 
 
 
@@ -22,14 +23,16 @@ function ShopWindow(){
         })
     }
     return(
-        <ShopWindowContainer toggle={menuDataSelector.shop}>
+        <ShopWindowContainer istoggled={menuDataSelector.shop}>
             <ShopWindowHeaderContainer>
                 <ShopWindowHeaderTabs>
-                    <ImageButton toggle={currentTab === 1} function={() => toggleTab(1)} title="Upgrades" alt="upgrades tab" offImage="/img/UpdrageTabButton.png" onImage="/img/UpdrageTabButton-press.png"/>
-                    <ImageButton toggle={currentTab === 2} function={() => toggleTab(2)} title="Hire" alt="hire staff tab" offImage="/img/HireTabButton.png" onImage="/img/HireTabButton-press.png"/>
+                    <ImageButton istoggled={currentTab === 1 ? true : false} function={() => toggleTab(1)} title="Upgrades" alt="upgrades tab" offImage="/img/shop/UpdrageTabButton.png" onImage="/img/shop/UpdrageTabButton-press.png"/>
+                    <ImageButton istoggled={currentTab === 2 ? true : false} function={() => toggleTab(2)} title="Hire" alt="hire staff tab" offImage="/img/shop/HireTabButton.png" onImage="/img/shop/HireTabButton-press.png"/>
                 </ShopWindowHeaderTabs>
-                <ImageButton toggle={currentTab === 99} function={() => dispatch(toggleShop())} title="Close" alt="close shop" offImage="/img/CloseShopButton.png" onImage="/img/CloseShopButton.png"/>
+                <ImageButton istoggled={currentTab === 99} function={() => dispatch(toggleShop())} title="Close" alt="close shop" offImage="/img/shop/CloseShopButton.png" onImage="/img/shop/CloseShopButton.png"/>
             </ShopWindowHeaderContainer>
+
+            {currentTab === 1 && <UpgradesTab />}
         </ShopWindowContainer>
     )
 }

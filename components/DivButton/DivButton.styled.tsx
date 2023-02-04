@@ -47,7 +47,7 @@ export const DivBittonContainer = styled.div<IToggle>`
         }
     }
 
-    ${({ toggle }) => toggle && css`
+    ${({ istoggled }) => istoggled && css`
         ${DivButtonImage}{
             opacity:0;
         }

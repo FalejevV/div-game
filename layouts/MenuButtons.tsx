@@ -24,7 +24,7 @@ function MenuButtons(){
     return(
         <ButtonsContainer>
             <CartButtonContainer>
-                <ImageButton title={"Shop"} alt={"Toggle shop"} offImage={"/img/cart.png"} onImage={"/img/cart-press.png"} toggle={menuDataSelector.shop} function={() => dispatch(toggleShop())} />
+                <ImageButton title={"Shop"} alt={"Toggle shop"} offImage={"/img/shop/cart.png"} onImage={"/img/shop/cart-press.png"} istoggled={menuDataSelector.shop} function={() => dispatch(toggleShop())} />
                 <MoneyIndicator />
             </CartButtonContainer>
         </ButtonsContainer>
