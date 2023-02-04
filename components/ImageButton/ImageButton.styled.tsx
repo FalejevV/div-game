@@ -27,7 +27,7 @@ export const ImageButtonON = styled(Image)`
 export const ImageButtonContainer = styled.div<IToggle>`
     width:70px;
     height:70px;
-    image-rendering: pixelated;
+    image-rendering: crisp-edges;
     position: relative;
     cursor: pointer;
 

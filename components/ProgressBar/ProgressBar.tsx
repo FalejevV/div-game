@@ -7,7 +7,7 @@ import {progressPhrases} from "../../text";
 
 function ProgressBar(){
     const divDataSelector = useAppSelector((state:RootState) => state.divData);
-    const [progressText, setProgressText] = useState<string>("ALMOST DONE");
+    const [progressText, setProgressText] = useState<string>("Need to center it!");
 
     useEffect(() => {
         if(divDataSelector.fails % 7 === 0 && divDataSelector.fails > 1){
