@@ -33,5 +33,4 @@ export const DivObjectItself = styled.div<IPosition>`
     left: ${({ left }) => left+"%" || '50%'};
     top: ${({ top }) => top+"%" || '50%'};
     transform: translate(-50%, -50%);
-    border-radius: 5px;
 `

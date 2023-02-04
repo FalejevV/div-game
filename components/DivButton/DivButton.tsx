@@ -5,6 +5,7 @@ import { DivBittonContainer, DivButtonImage, DivButtonImagePress } from "./DivBu
 import enterImage from "../../public/img/enter.png";
 import enterImagePressed from "../../public/img/enter-press.png";
 import { RootState } from "app/store";
+import { setMoney } from "app/slices/userData";
 
 function DivButton(){
     let divDataSelector = useAppSelector((state:RootState) => state.divData);
@@ -62,10 +63,15 @@ function DivButton(){
     },[]);
     // Call moveDiv() when keyPress === false.
     useEffect(() => {
-        if(!keyPress){
+        if(keyPress){
             moveDiv();
         }
     },[keyPress]);
+
+    function payDivCentered(){
+        let payout = userDataSelector.keyLevel * 5
+        dispatch(setMoney(payout));
+    }
 
     function moveDiv(){
         if(debounce){
@@ -75,20 +81,20 @@ function DivButton(){
         setTimeout(() => {
             setDebounce(false);
         }, 25);
-        let randomLeft = Math.floor(Math.random() * (85 - 10) + 10);
-        let randomTop = Math.floor(Math.random() * (85 - 10) + 10);
+        let randomLeft = Math.floor(Math.random() * (75 - 25) + 25);
+        let randomTop = Math.floor(Math.random() * (80 - 20) + 20);
         if(randomLeft === 50 && randomTop === 50){
-            console.log("LOLZ");
             dispatch(setFails(25));
         }
         let failValue = Math.floor(Math.random() * (userDataSelector.failLevel - 1) + 1);
         if(divDataSelector.fails + failValue === 25){
             dispatch(setFails(divDataSelector.fails + failValue));
+            payDivCentered();   
             randomLeft = 50;
             randomTop = 50;
         }else{
             if(divDataSelector.fails + failValue >= 26){
-                dispatch(setFails(0)); 
+                dispatch(setFails(0));
             }else{
                 dispatch(setFails(divDataSelector.fails + failValue));
             }
