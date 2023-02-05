@@ -8,7 +8,7 @@ function HelperItem(props:{
 }){
     return(
         <HelperItemContainer>
-            <HelperItemIcon src={props.helper.imageSrc} alt={props.helper.imageAlt} width="70" height="70" />
+            <HelperItemIcon src={props.helper.imageSrc} alt={props.helper.imageAlt}/>
         </HelperItemContainer>
     )
 }

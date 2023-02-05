@@ -3,9 +3,9 @@ import Image from "next/image";
 import { IToggle } from "interface";
 
 
-export const ImageButtonOFF = styled(Image)`
-    width:100%;
-    height:100%;
+export const ImageButtonOFF = styled.img`
+    width:70px;
+    height:70px;
     object-fit: contain;
     position: absolute;
     top:0px;
@@ -13,9 +13,9 @@ export const ImageButtonOFF = styled(Image)`
     opacity:1;
 `
 
-export const ImageButtonON = styled(Image)`
-    width:100%;
-    height:100%;
+export const ImageButtonON = styled.img`
+    width:70px;
+    height:70px;
     object-fit: contain;
     position: absolute;
     top:0px;

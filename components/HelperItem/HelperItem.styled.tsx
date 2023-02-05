@@ -9,6 +9,7 @@ export const HelperItemContainer = styled.div`
 `
 
 
-export const HelperItemIcon = styled(Image)`
-    
+export const HelperItemIcon = styled.img`
+    width:70px;
+    height:70px;
 `

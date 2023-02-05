@@ -10,8 +10,10 @@ export const UpgradeContainer = styled.div`
     gap:15px;
 `
 
-export const UpgradeImage = styled(Image)`
+export const UpgradeImage = styled.img`
     image-rendering: crisp-edges;
+    width:70px;
+    height:70px;
 `
 
 export const UpgradeText = styled.p`
@@ -22,10 +24,12 @@ export const UpgradeText = styled.p`
     flex:1 auto;
 `
 
-export const UpgradePurchaseImage = styled(Image)<IToggle>`
+export const UpgradePurchaseImage = styled.img<IToggle>`
     image-rendering: crisp-edges;
     cursor: pointer;
-
+    width:50px;
+    height:50px;
+    
     &:hover{
             filter:brightness(1);
         }

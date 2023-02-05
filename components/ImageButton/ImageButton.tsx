@@ -1,11 +1,8 @@
-import { useState } from "react";
 import { ImageButtonContainer, ImageButtonOFF, ImageButtonON } from "./ImageButton.styled";
 
 
 
 function ImageButton(props:{
-    width?:number,
-    height?:number,
     title:string,
     alt:string,
     offImage:string,
@@ -16,8 +13,8 @@ function ImageButton(props:{
 
     return(
         <ImageButtonContainer istoggled={props.istoggled ? 1 : undefined } onClick={() => props.function()}>
-            <ImageButtonOFF priority width={props.width || "70"} height={props.height || "70"} alt={props.alt} src={props.offImage} />
-            <ImageButtonON priority width={props.width || "70"} height={props.height || "70"} alt={props.alt} src={props.onImage} />
+            <ImageButtonOFF  alt={props.alt} src={props.offImage} />
+            <ImageButtonON  alt={props.alt} src={props.onImage} />
         </ImageButtonContainer>
     )
 }

@@ -11,11 +11,12 @@ export const ShopWindowContainer = styled.div<IToggle>`
     z-index: 100;
     position: absolute;
     left:15px;
-    top:-500px;
+    top:calc(-50vh - 500px);
     transition: top 0.5s, opacity 0.7s;
     opacity:0;
     border:5px solid #69412ece;
     pointer-events: none;
+
     ${({ istoggled }) => istoggled && css`
         top:95px;
         opacity:1;

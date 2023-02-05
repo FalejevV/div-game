@@ -3,18 +3,21 @@ import Image from "next/image";
 import { IToggle } from "interface";
 
 
-export const DivButtonImage = styled(Image)`
+export const DivButtonImage = styled.img`
     width:100%;
     height:100%;
+    max-width: 180px;
+    max-height: 198px;
     object-fit: contain;
     image-rendering: pixelated;
     position: absolute;
     left:0px;
     top:0px;
     opacity:1;
+    
 `
 
-export const DivButtonImagePress = styled(Image)`
+export const DivButtonImagePress = styled.img`
     width:100%;
     height:100%;
     object-fit: contain;
@@ -23,6 +26,8 @@ export const DivButtonImagePress = styled(Image)`
     left:0px;
     top:0px;
     opacity:0;
+    max-width: 180px;
+    max-height: 198px;
 `
 
 

@@ -14,6 +14,7 @@ function DivButton(){
     const [debounce,setDebounce] = useState(false);
     const [keyPress, setKeyPress] = useState(false);
     const [centered, setCentered] = useState(false);
+
     // Handle Enter key press on keyboard.(keyPrass state change)
     useEffect(() => {
         addEventListener("keypress", function (e:KeyboardEvent) {
@@ -107,7 +108,7 @@ function DivButton(){
 
     return(
         <DivBittonContainer istoggled={keyPress ? 1 : undefined } onClick={moveDiv}>
-            <DivButtonImage priority alt='enter-button' width="240" height="120" src={keyLevelImages[userDataSelector.keyLevel]?.default || keyLevelImages[0].default}/>
+            <DivButtonImage alt='enter-button' src={keyLevelImages[userDataSelector.keyLevel]?.default || keyLevelImages[0].default}/>
             <DivButtonImagePress alt='enter-button' width="240" height="120" src={keyLevelImages[userDataSelector.keyLevel]?.press || keyLevelImages[0].press} />
         </DivBittonContainer>
     )

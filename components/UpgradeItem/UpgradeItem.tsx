@@ -30,14 +30,14 @@ function UpgradeItem(props:{
 
     return(
         <UpgradeContainer>
-            <UpgradeImage width="70" height="70" alt={props.imageAlt} src={props.imageSrc}/>
+            <UpgradeImage  alt={props.imageAlt} src={props.imageSrc}/>
             <UpgradeText>{props.text}</UpgradeText>
             <UpgradePurchaseImageContainer >
                 <UpgradeInfoContainer>
                     <UpgradeLevelText>{userDataSelector[props.level]} lvl.</UpgradeLevelText>
                     <UpgradePriceText>{getPrice()} $</UpgradePriceText>
                 </UpgradeInfoContainer>
-                <UpgradePurchaseImage priority onClick={purchaseUpgrade} istoggled={userDataSelector.money >= getPrice() ? 1 : undefined } width="50" height="50" alt="purchase upgrade" src="/img/shop/UpgradePurchaseButtonIcon.png"/>
+                <UpgradePurchaseImage onClick={purchaseUpgrade} istoggled={userDataSelector.money >= getPrice() ? 1 : undefined } alt="purchase upgrade" src="/img/shop/UpgradePurchaseButtonIcon.png"/>
             </UpgradePurchaseImageContainer>
 
         </UpgradeContainer>

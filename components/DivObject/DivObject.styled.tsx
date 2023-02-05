@@ -6,7 +6,7 @@ export const DivObjectBoardContainer = styled.div`
     width:100%;
     max-width:1000px;
     height:100%;
-    max-height: 625;
+    max-height: 625px;
     aspect-ratio: 16 / 10;
     position: relative;
 
