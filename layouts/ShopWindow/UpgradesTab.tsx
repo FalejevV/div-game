@@ -1,6 +1,4 @@
 import { nanoid } from "@reduxjs/toolkit";
-import { useAppSelector } from "app/hooks";
-import { RootState } from "app/store";
 import UpgradeItem from "components/UpgradeItem/UpgradeItem";
 import styled from "styled-components";
 import upgrades from "upgrades";

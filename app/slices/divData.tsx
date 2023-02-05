@@ -3,7 +3,7 @@ import { IDiv, IPosition } from "interface";
 
 const initialState:IDiv= {
     left:30,
-    top:25,
+    top:30,
     fails:0,
 }
 

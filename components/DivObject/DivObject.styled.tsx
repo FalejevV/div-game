@@ -1,10 +1,12 @@
 import { IPosition } from "interface";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 
 export const DivObjectBoardContainer = styled.div`
     width:100%;
     max-width:1000px;
+    height:100%;
+    max-height: 625;
     aspect-ratio: 16 / 10;
     position: relative;
 
@@ -29,8 +31,8 @@ export const DivObjectItself = styled.div<IPosition>`
     background-color:#ffffff2c;
     border:2px solid black;
     position:absolute;
-    transition: all 0.3s;
-    left: ${({ left }) => left+"%" || '50%'};
-    top: ${({ top }) => top+"%" || '50%'};
+    transition: top 0.3s, left 0.3s;
+    left: ${({ left }) => left+"%" || '30%'};
+    top: ${({ top }) => top+"%" || '30%'};
     transform: translate(-50%, -50%);
 `

@@ -1,5 +1,5 @@
 import { IToggle } from "interface";
-import styled, { css, keyframes } from "styled-components";
+import styled, { css } from "styled-components";
 
 export const ShopWindowContainer = styled.div<IToggle>`
     max-width: 470px;
