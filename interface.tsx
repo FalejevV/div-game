@@ -21,6 +21,7 @@ export interface IUser{
     money:number,
     failLevel:number,
     keyLevel:number,
+    workerLevel:number,
 }
 
 export interface IHelpers{

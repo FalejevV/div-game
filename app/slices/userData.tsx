@@ -5,7 +5,8 @@ import { IUser } from "interface";
 let initialState:IUser = {
     money:0,
     failLevel:0,
-    keyLevel:0
+    keyLevel:0,
+    workerLevel: 0,
 }
 
 const userSlice = createSlice({

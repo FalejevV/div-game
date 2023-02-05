@@ -5,19 +5,42 @@ const upgrades:IUpgrade[] = [
     {
         imageAlt:"Key upgrade",
         imageSrc:"/img/shop/EnterUpgrage.png",
-        text:"Expensive keyboard = Expensive DIV",
+        text:"DIV price increase",
         level:"keyLevel",
         price:5,
-        priceMultiplier:1.23
+        priceMultiplier:1.84
     },
 
     {
         imageAlt:"Inteligence",
         imageSrc:"/img/shop/LightBulbUpgradeIcon.png",
-        text:"Learn how to google = progress",
+        text:"Progress increase",
         level:"failLevel",
         price:25,
         priceMultiplier:94.72
+    },
+
+    {
+        imageAlt:"Workers",
+        imageSrc:"/img/shop/UpgradeIncomeIcon.png",
+        text:"More money from workers",
+        level:"workerLevel",
+        price:150,
+        priceMultiplier:12.12
+    }
+]
+
+export const keyLevelImages:{
+    default:string,
+    press:string,
+}[] = [
+    {
+        default:"/img/enter.png",
+        press:"/img/enter-press.png"
+    },
+    {
+        default:"/img/enterupgrades/Bronse-enter.png",
+        press:"/img/enterupgrades/Bronse-enter-press.png"
     }
 ]
 

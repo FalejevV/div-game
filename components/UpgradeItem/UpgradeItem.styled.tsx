@@ -19,6 +19,7 @@ export const UpgradeText = styled.p`
     font-weight: bold;
     color:#69362E;
     padding: 5px 0px;
+    flex:1 auto;
 `
 
 export const UpgradePurchaseImage = styled(Image)<IToggle>`

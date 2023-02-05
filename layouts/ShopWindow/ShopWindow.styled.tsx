@@ -1,6 +1,5 @@
 import { IToggle } from "interface";
-import styled, { css } from "styled-components";
-
+import styled, { css, keyframes } from "styled-components";
 
 export const ShopWindowContainer = styled.div<IToggle>`
     max-width: 470px;
@@ -11,12 +10,16 @@ export const ShopWindowContainer = styled.div<IToggle>`
     background-color: #babeb1;
     z-index: 100;
     position: absolute;
-    left:-100vw;
-    top:95px;
-    transition: left 0.3s;
+    left:15px;
+    top:-500px;
+    transition: top 0.5s, opacity 0.7s;
+    opacity:0;
     border:5px solid #69412ece;
+    pointer-events: none;
     ${({ istoggled }) => istoggled && css`
-        left:15px;
+        top:95px;
+        opacity:1;
+        pointer-events: auto;
     `}
     display:flex;
     flex-direction: column;

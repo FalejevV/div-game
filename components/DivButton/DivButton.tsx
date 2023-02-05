@@ -2,8 +2,7 @@ import { useAppDispatch, useAppSelector } from "app/hooks";
 import { setFails, setPosition } from "app/slices/divData";
 import { useEffect, useState } from "react";
 import { DivBittonContainer, DivButtonImage, DivButtonImagePress } from "./DivButton.styled";
-import enterImage from "../../public/img/enter.png";
-import enterImagePressed from "../../public/img/enter-press.png";
+import { keyLevelImages } from "upgrades";
 import { RootState } from "app/store";
 import { setMoney } from "app/slices/userData";
 
@@ -108,8 +107,8 @@ function DivButton(){
 
     return(
         <DivBittonContainer istoggled={keyPress ? 1 : undefined } onClick={moveDiv}>
-            <DivButtonImage alt='enter-button' width="240" height="120" src={enterImage}/>
-            <DivButtonImagePress alt='enter-button' width="240" height="120" src={enterImagePressed} />
+            <DivButtonImage alt='enter-button' width="240" height="120" src={keyLevelImages[userDataSelector.keyLevel]?.default || keyLevelImages[0].default}/>
+            <DivButtonImagePress alt='enter-button' width="240" height="120" src={keyLevelImages[userDataSelector.keyLevel]?.press || keyLevelImages[0].press} />
         </DivBittonContainer>
     )
 }
