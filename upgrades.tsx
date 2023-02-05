@@ -7,17 +7,17 @@ const upgrades:IUpgrade[] = [
         imageSrc:"/img/shop/EnterUpgrage.png",
         text:"Expensive keyboard = Expensive DIV",
         level:"keyLevel",
-        price:0,
+        price:5,
         priceMultiplier:1.23
     },
 
     {
         imageAlt:"Inteligence",
-        imageSrc:"/img/shop/EnterUpgrage.png",
-        text:"The more I google, the more I progress",
+        imageSrc:"/img/shop/LightBulbUpgradeIcon.png",
+        text:"Learn how to google = progress",
         level:"failLevel",
-        price:0,
-        priceMultiplier:1.62
+        price:25,
+        priceMultiplier:94.72
     }
 ]
 

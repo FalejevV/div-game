@@ -26,28 +26,39 @@ export const UpgradePurchaseImage = styled(Image)<IToggle>`
     cursor: pointer;
 
     &:hover{
-        filter:brightness(1.2);
-    }
-
-
-    ${({ istoggled }) => !istoggled && css`
-
-        &:hover{
             filter:brightness(1);
         }
-        opacity: 0.4;
+    opacity: 0.4;
+
+
+    ${({ istoggled }) => istoggled && css`
+
+        &:hover{
+            filter:brightness(1.2);
+        }
+        opacity: 1;
     `}
 `
 
 export const UpgradePurchaseImageContainer = styled.div`
     display: flex;
     align-items: center;
+    gap:5px;
+    padding-left:10px;
 `
 
-export const UpgradePurchaseIndicator = styled.p`
-    font-weight: bold;
-    color:#4B203C;
-    padding:3px 8px;
-    font-size: 20px;
-    user-select: none;
+export const UpgradeInfoContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap:5px;
+    align-items: flex-end;
+`
+
+export const UpgradeLevelText = styled.div`
+    white-space: nowrap;
+`
+
+export const UpgradePriceText = styled.div`
+    white-space: nowrap;
 `

@@ -23,11 +23,11 @@ function ShopWindow(){
         })
     }
     return(
-        <ShopWindowContainer istoggled={menuDataSelector.shop}>
+        <ShopWindowContainer istoggled={menuDataSelector.shop ? 1 : undefined }>
             <ShopWindowHeaderContainer>
                 <ShopWindowHeaderTabs>
-                    <ImageButton istoggled={currentTab === 1 ? true : false} function={() => toggleTab(1)} title="Upgrades" alt="upgrades tab" offImage="/img/shop/UpdrageTabButton.png" onImage="/img/shop/UpdrageTabButton-press.png"/>
-                    <ImageButton istoggled={currentTab === 2 ? true : false} function={() => toggleTab(2)} title="Hire" alt="hire staff tab" offImage="/img/shop/HireTabButton.png" onImage="/img/shop/HireTabButton-press.png"/>
+                    <ImageButton istoggled={currentTab === 1} function={() => toggleTab(1)} title="Upgrades" alt="upgrades tab" offImage="/img/shop/UpdrageTabButton.png" onImage="/img/shop/UpdrageTabButton-press.png"/>
+                    <ImageButton istoggled={currentTab === 2} function={() => toggleTab(2)} title="Hire" alt="hire staff tab" offImage="/img/shop/HireTabButton.png" onImage="/img/shop/HireTabButton-press.png"/>
                 </ShopWindowHeaderTabs>
                 <ImageButton istoggled={currentTab === 99} function={() => dispatch(toggleShop())} title="Close" alt="close shop" offImage="/img/shop/CloseShopButton.png" onImage="/img/shop/CloseShopButton.png"/>
             </ShopWindowHeaderContainer>

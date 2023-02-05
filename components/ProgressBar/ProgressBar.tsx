@@ -6,11 +6,16 @@ import {progressPhrases} from "../../text";
 
 
 function ProgressBar(){
+    const [counter,setCounter] = useState(0);
+    const userDataSelector = useAppSelector((state: RootState) => state.userData);
     const divDataSelector = useAppSelector((state:RootState) => state.divData);
     const [progressText, setProgressText] = useState<string>("Need to center it!");
 
     useEffect(() => {
-        if(divDataSelector.fails % 7 === 0 && divDataSelector.fails > 1){
+        let divisor = userDataSelector.failLevel > 5 ? 5 : 7;
+
+        setCounter(prev => prev + 1);
+        if(counter % divisor === 0 && divDataSelector.fails > 1 && divDataSelector.fails < 25){
             setProgressText(() => {
                 let randomPhrase = progressPhrases[Math.floor(Math.random() * progressPhrases.length)];
                 return randomPhrase;

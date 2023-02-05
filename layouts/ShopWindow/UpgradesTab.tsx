@@ -17,9 +17,7 @@ const UpgradesContainer = styled.div`
     gap:15px;
 `
 
-
 function UpgradesTab(){
-    let userDataSelector = useAppSelector((state:RootState) => state.userData);
     return(
         <UpgradesContainer>
             {upgrades.map(upgrade => <UpgradeItem price={upgrade.price} key={nanoid()}priceMultiplier={upgrade.priceMultiplier} level={upgrade.level} imageAlt={upgrade.imageAlt} imageSrc={upgrade.imageSrc} text={upgrade.text} />)}

@@ -15,7 +15,7 @@ function ImageButton(props:{
 }){
 
     return(
-        <ImageButtonContainer istoggled={props.istoggled} onClick={() => props.function()}>
+        <ImageButtonContainer istoggled={props.istoggled ? 1 : undefined } onClick={() => props.function()}>
             <ImageButtonOFF width={props.width || "70"} height={props.height || "70"} alt={props.alt} src={props.offImage} />
             <ImageButtonON width={props.width || "70"} height={props.height || "70"} alt={props.alt} src={props.onImage} />
         </ImageButtonContainer>

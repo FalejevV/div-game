@@ -14,7 +14,7 @@ export interface ICount{
 }
 
 export interface IToggle{
-    istoggled: boolean
+    istoggled: 1 | undefined
 }
 
 export interface IUser{

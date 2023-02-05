@@ -1,7 +1,8 @@
-import { useAppSelector } from "app/hooks";
+import { useAppDispatch, useAppSelector } from "app/hooks";
+import { setMoney, upgradeLevel } from "app/slices/userData";
 import { RootState } from "app/store";
 import { IUser } from "interface";
-import { UpgradeContainer, UpgradeImage, UpgradePurchaseImage, UpgradePurchaseImageContainer, UpgradePurchaseIndicator, UpgradeText } from "./UpgradeItem.styled";
+import { UpgradeContainer, UpgradeImage, UpgradeInfoContainer, UpgradeLevelText, UpgradePriceText, UpgradePurchaseImage, UpgradePurchaseImageContainer, UpgradeText } from "./UpgradeItem.styled";
 
 
 
@@ -14,14 +15,29 @@ function UpgradeItem(props:{
     priceMultiplier:number,
 }){
     let userDataSelector = useAppSelector((state:RootState) => state.userData);
+    let dispatch = useAppDispatch();
+
+    function purchaseUpgrade(){
+        if(userDataSelector.money >= getPrice()){
+            dispatch(setMoney(-1 * getPrice()));
+            dispatch(upgradeLevel(props.level));
+        }  
+    }
+
+    function getPrice(){
+        return Math.floor((userDataSelector[props.level] * (props.price * props.priceMultiplier * (userDataSelector[props.level]/1.65)) + props.price));
+    }
 
     return(
         <UpgradeContainer>
             <UpgradeImage width="70" height="70" alt={props.imageAlt} src={props.imageSrc}/>
             <UpgradeText>{props.text}</UpgradeText>
             <UpgradePurchaseImageContainer >
-                <UpgradePurchaseIndicator>{userDataSelector[props.level] || 0}</UpgradePurchaseIndicator>
-                <UpgradePurchaseImage istoggled={userDataSelector.money < (userDataSelector[props.level] * props.price * props.priceMultiplier)} width="50" height="50" alt="purchase upgrade" src="/img/shop/UpgradePurchaseButtonIcon.png"/>
+                <UpgradeInfoContainer>
+                    <UpgradeLevelText>{userDataSelector[props.level]} lvl.</UpgradeLevelText>
+                    <UpgradePriceText>{getPrice()} $</UpgradePriceText>
+                </UpgradeInfoContainer>
+                <UpgradePurchaseImage onClick={purchaseUpgrade} istoggled={userDataSelector.money >= getPrice() ? 1 : undefined } width="50" height="50" alt="purchase upgrade" src="/img/shop/UpgradePurchaseButtonIcon.png"/>
             </UpgradePurchaseImageContainer>
 
         </UpgradeContainer>

@@ -14,7 +14,7 @@ function DivButton(){
     let dispatch = useAppDispatch();
     const [debounce,setDebounce] = useState(false);
     const [keyPress, setKeyPress] = useState(false);
-
+    const [centered, setCentered] = useState(false);
     // Handle Enter key press on keyboard.(keyPrass state change)
     useEffect(() => {
         addEventListener("keypress", function (e:KeyboardEvent) {
@@ -69,7 +69,7 @@ function DivButton(){
     },[keyPress]);
 
     function payDivCentered(){
-        let payout = userDataSelector.keyLevel * 5
+        let payout = Math.floor(((userDataSelector.keyLevel*1.28)+1) * 5);
         dispatch(setMoney(payout));
     }
 
@@ -86,15 +86,18 @@ function DivButton(){
         if(randomLeft === 50 && randomTop === 50){
             dispatch(setFails(25));
         }
-        let failValue = Math.floor(Math.random() * (userDataSelector.failLevel - 1) + 1);
-        if(divDataSelector.fails + failValue === 25){
+        let failValue = Math.floor(Math.random() * ((userDataSelector.failLevel +1) - 1) + (userDataSelector.failLevel +1));
+
+        if(divDataSelector.fails + failValue >= 25 && centered === false){
             dispatch(setFails(divDataSelector.fails + failValue));
             payDivCentered();   
             randomLeft = 50;
             randomTop = 50;
+            setCentered(true)
         }else{
             if(divDataSelector.fails + failValue >= 26){
                 dispatch(setFails(0));
+                setCentered(false);
             }else{
                 dispatch(setFails(divDataSelector.fails + failValue));
             }
@@ -104,7 +107,7 @@ function DivButton(){
     }
 
     return(
-        <DivBittonContainer istoggled={keyPress} onClick={moveDiv}>
+        <DivBittonContainer istoggled={keyPress ? 1 : undefined } onClick={moveDiv}>
             <DivButtonImage alt='enter-button' width="240" height="120" src={enterImage}/>
             <DivButtonImagePress alt='enter-button' width="240" height="120" src={enterImagePressed} />
         </DivBittonContainer>

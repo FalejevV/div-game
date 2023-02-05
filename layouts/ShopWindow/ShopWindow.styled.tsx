@@ -3,7 +3,7 @@ import styled, { css } from "styled-components";
 
 
 export const ShopWindowContainer = styled.div<IToggle>`
-    max-width: 400px;
+    max-width: 470px;
     width:100%;
     height:500px;
     overflow-y: hidden;
