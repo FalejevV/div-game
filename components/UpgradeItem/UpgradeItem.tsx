@@ -37,7 +37,7 @@ function UpgradeItem(props:{
                     <UpgradeLevelText>{userDataSelector[props.level]} lvl.</UpgradeLevelText>
                     <UpgradePriceText>{getPrice()} $</UpgradePriceText>
                 </UpgradeInfoContainer>
-                <UpgradePurchaseImage onClick={purchaseUpgrade} istoggled={userDataSelector.money >= getPrice() ? 1 : undefined } width="50" height="50" alt="purchase upgrade" src="/img/shop/UpgradePurchaseButtonIcon.png"/>
+                <UpgradePurchaseImage priority onClick={purchaseUpgrade} istoggled={userDataSelector.money >= getPrice() ? 1 : undefined } width="50" height="50" alt="purchase upgrade" src="/img/shop/UpgradePurchaseButtonIcon.png"/>
             </UpgradePurchaseImageContainer>
 
         </UpgradeContainer>

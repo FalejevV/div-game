@@ -3,6 +3,7 @@ import { toggleShop } from "app/slices/menuData";
 import { RootState } from "app/store";
 import ImageButton from "components/ImageButton/ImageButton";
 import { useState } from "react";
+import HelpersTab from "./HelpersTab";
 import { ShopWindowContainer, ShopWindowHeaderContainer, ShopWindowHeaderTabs } from "./ShopWindow.styled";
 import UpgradesTab from "./UpgradesTab";
 
@@ -33,6 +34,7 @@ function ShopWindow(){
             </ShopWindowHeaderContainer>
 
             {currentTab === 1 && <UpgradesTab />}
+            {currentTab === 2 && <HelpersTab />}
         </ShopWindowContainer>
     )
 }

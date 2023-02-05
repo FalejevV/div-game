@@ -28,9 +28,10 @@ export interface IHelpers{
     bug:number,
     rat:number,
     bugHorde:number,
-    forumGuy:number,
+    cat:number,
     juniorDeveloper:number,
     seniorDeveloper:number,
+    AI:number,
 }
 
 export interface IButton{
@@ -45,4 +46,14 @@ export interface IUpgrade{
     level:keyof IUser,
     price:number,
     priceMultiplier:number,
+}
+
+
+export interface IHelper{
+    text:string,
+    helper:keyof IHelpers,
+    price:number,
+    priceMultiplier:number,
+    imageAlt:string,
+    imageSrc:string,
 }
