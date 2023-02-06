@@ -24,7 +24,7 @@ const upgrades:IUpgrade[] = [
         imageAlt:"Workers",
         imageSrc:"/img/shop/UpgradeIncomeIcon.png",
         text:"More money from workers",
-        level:"workerLevel",
+        level:"helperLevel",
         price:150,
         priceMultiplier:12.12
     }
