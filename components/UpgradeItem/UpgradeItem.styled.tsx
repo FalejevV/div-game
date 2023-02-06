@@ -8,6 +8,7 @@ export const UpgradeContainer = styled.div`
     display:flex;
     align-items: center;
     gap:15px;
+    user-select: none;
 `
 
 export const UpgradeImage = styled.img`
@@ -62,8 +63,10 @@ export const UpgradeInfoContainer = styled.div`
 
 export const UpgradeLevelText = styled.div`
     white-space: nowrap;
+    font-size: 18px;
 `
 
 export const UpgradePriceText = styled.div`
     white-space: nowrap;
+    font-size: 18px;
 `

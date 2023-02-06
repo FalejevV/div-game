@@ -21,7 +21,7 @@ export interface IUser{
     money:number,
     failLevel:number,
     keyLevel:number,
-    workerLevel:number,
+    helperLevel:number,
 }
 
 export interface IHelpers{
@@ -56,4 +56,5 @@ export interface IHelper{
     priceMultiplier:number,
     imageAlt:string,
     imageSrc:string,
+    DPS:number,
 }

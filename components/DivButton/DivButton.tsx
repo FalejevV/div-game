@@ -86,8 +86,8 @@ function DivButton(){
         if(randomLeft === 50 && randomTop === 50){
             dispatch(setFails(25));
         }
-        let failValue = Math.floor(Math.random() * ((userDataSelector.failLevel +1) - 1) + (userDataSelector.failLevel +1));
-
+        let failValue = Math.floor(Math.random() * (userDataSelector.failLevel+1) +1);
+        console.log(failValue);
         if(divDataSelector.fails + failValue >= 25 && centered === false){
             dispatch(setFails(divDataSelector.fails + failValue));
             payDivCentered();   

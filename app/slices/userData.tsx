@@ -6,7 +6,7 @@ let initialState:IUser = {
     money:0,
     failLevel:0,
     keyLevel:0,
-    workerLevel: 0,
+    helperLevel: 0,
 }
 
 const userSlice = createSlice({

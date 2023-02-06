@@ -2,6 +2,7 @@ import styled from "styled-components";
 import helpers from "helpers";
 import { IHelper } from "interface";
 import HelperItem from "components/HelperItem/HelperItem";
+import { nanoid } from "@reduxjs/toolkit";
 
 export const HelpersContainer = styled.div`
     width:100%;
@@ -18,7 +19,7 @@ export const HelpersContainer = styled.div`
 function HelpersTab(){
     return (
         <HelpersContainer>
-            {helpers.map((helper:IHelper) => <HelperItem helper={helper} />)}
+            {helpers.map((helper:IHelper) => <HelperItem key={nanoid()} helper={helper} />)}
         </HelpersContainer>
     )
 }

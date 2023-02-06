@@ -3,6 +3,7 @@ import { Provider } from 'react-redux'
 import {store} from "../../app/store";
 import MainWindow from 'layouts/MainWindow/MainWindow';
 
+
 export default function Home() {
   return (
     <Provider store={store}>

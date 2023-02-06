@@ -18,7 +18,7 @@ const UpgradesContainer = styled.div`
 function UpgradesTab(){
     return(
         <UpgradesContainer>
-            {upgrades.map(upgrade => <UpgradeItem price={upgrade.price} key={nanoid()}priceMultiplier={upgrade.priceMultiplier} level={upgrade.level} imageAlt={upgrade.imageAlt} imageSrc={upgrade.imageSrc} text={upgrade.text} />)}
+            {upgrades.map(upgrade => <UpgradeItem price={upgrade.price} key={nanoid()} priceMultiplier={upgrade.priceMultiplier} level={upgrade.level} imageAlt={upgrade.imageAlt} imageSrc={upgrade.imageSrc} text={upgrade.text} />)}
         </UpgradesContainer>
     )
 }
