@@ -46,6 +46,7 @@ export const HelperPurchaseContainer = styled.div`
 
 export const HelperInfoText = styled.p`
     font-size: 18px;
+    white-space: nowrap;
 `
 export const HelperBuyImageButton = styled.img<IToggle>`
     width:50px;

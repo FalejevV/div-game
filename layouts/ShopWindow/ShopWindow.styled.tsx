@@ -25,6 +25,13 @@ export const ShopWindowContainer = styled.div<IToggle>`
     display:flex;
     flex-direction: column;
     gap:25px;
+
+
+    @media(max-width:500px){
+        left:0px;
+        width:100%;
+        max-width:unset;
+    }
 `
 
 export const ShopWindowHeaderContainer = styled.div`

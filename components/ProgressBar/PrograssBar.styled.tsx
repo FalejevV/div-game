@@ -11,6 +11,7 @@ export const ProgressBarContainer = styled.div`
     display: flex;
     align-items: center;
     position: relative;
+    margin-top: 20px;
 `
 
 export const ProgressBarText = styled.p`
@@ -33,4 +34,20 @@ export const ProgressBarIndicator = styled.div<ICount>`
     ${({ count }) => count && `
         width: calc(${count} * 4%);
     `}
+`
+
+export const ActionStats = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    height:20px;
+    position: absolute;
+    top:-28px;
+    gap:25px;
+`
+
+export const ActionText = styled.p`
+    white-space: nowrap;
+    font-size:17px;
 `

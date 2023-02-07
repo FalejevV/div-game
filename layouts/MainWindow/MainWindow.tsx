@@ -1,5 +1,5 @@
 import MenuButtons from "layouts/MenuButtons";
-import { MainContainer } from "./MainWindow.styled";
+import { MainContainer, MainWrapped } from "./MainWindow.styled";
 import DivObject from "components/DivObject/DivObject";
 import ProgressBar from "components/ProgressBar/ProgressBar";
 import DivButton from "components/DivButton/DivButton";
@@ -10,6 +10,7 @@ import { useEffect } from "react";
 import helpers from "helpers";
 import { IHelper } from "interface";
 import { setMoney } from "app/slices/userData";
+import HelpersDisplay from "layouts/HelpersDisplay/HelpersDisplay";
 
 
 function MainWindow(){
@@ -30,7 +31,7 @@ function MainWindow(){
                         totalPay += foundHelper.DPS * value;
                     }
                 }
-                dispatch(setMoney(totalPay + (totalPay * userDataSelector.helperLevel * 0.15)));
+                dispatch(setMoney(Math.floor(totalPay + (totalPay * userDataSelector.helperLevel * 0.15))));
             payWorkers();
             
         },1000);
@@ -39,16 +40,20 @@ function MainWindow(){
         return () => {
             clearTimeout(timeout);
         }
-    },[helperDataSelector]);
+    },[helperDataSelector, userDataSelector]);
 
     return(
-        <MainContainer>
-            <ShopWindow />
-            <MenuButtons />
-            <DivObject />
-            <ProgressBar />
-            <DivButton />
-        </MainContainer>
+        <MainWrapped>
+            <MainContainer>
+                <ShopWindow />
+                <MenuButtons />
+                <DivObject />
+                <ProgressBar />
+                <DivButton />
+            </MainContainer>
+
+            <HelpersDisplay />
+        </MainWrapped>
     )
 }
 

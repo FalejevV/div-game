@@ -4,11 +4,12 @@ import { setMoney } from "app/slices/userData";
 import { RootState } from "app/store";
 import { IHelper } from "interface";
 import { HelperBuyImageButton, HelperInfoText, HelperInfoTextContainer, HelperItemContainer, HelperItemIcon, HelperPurchaseContainer, HelperText, HelperTextContainer } from "./HelperItem.styled";
-
+import { unknownHelperImage } from "helpers";
 
 
 function HelperItem(props:{
-    helper:IHelper
+    helper:IHelper,
+    unknown?:boolean
 }){
 
     let helperDataSelector = useAppSelector((state:RootState) => state.helperData);
@@ -26,18 +27,20 @@ function HelperItem(props:{
     }
     return(
         <HelperItemContainer>
-            <HelperItemIcon src={props.helper.imageSrc} alt={props.helper.imageAlt}/>
+            <HelperItemIcon src={props.unknown ? unknownHelperImage : props.helper.imageSrc} alt={props.unknown ? "unknown helper" : props.helper.imageAlt}/>
             <HelperTextContainer>
-                <HelperText>{props.helper.text}</HelperText>
-                <HelperInfoText>{props.helper.DPS} $/s</HelperInfoText>
+                <HelperText>{props.unknown ? "???" : props.helper.text}</HelperText>
+                <HelperInfoText>{props.unknown ? "???" : props.helper.DPS} $/s</HelperInfoText>
             </HelperTextContainer>
+            {!props.unknown &&
             <HelperPurchaseContainer>
-                <HelperInfoTextContainer>
-                    <HelperInfoText>{helperDataSelector[props.helper.helper]} qty.</HelperInfoText>
-                    <HelperInfoText>{getPrice()} $</HelperInfoText>
-                </HelperInfoTextContainer>
+                    <HelperInfoTextContainer>
+                        <HelperInfoText>{helperDataSelector[props.helper.helper]} qty. ({helperDataSelector[props.helper.helper]* props.helper.DPS} $/s)</HelperInfoText>
+                        <HelperInfoText>{getPrice()} $</HelperInfoText>
+                    </HelperInfoTextContainer>
                 <HelperBuyImageButton onClick={hireHelper} istoggled={userDataSelector.money >= getPrice() ? 1 : undefined} src="/img/helpers/HireButton.png"/>
             </HelperPurchaseContainer>
+            }
         </HelperItemContainer>
     )
 }

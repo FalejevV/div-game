@@ -4,7 +4,7 @@ import { IHelpers } from "interface";
 
 let initialState:IHelpers = {
     bug:0,
-    rat:0,
+    mouse:0,
     bugHorde:0,
     cat:0,
     juniorDeveloper:0,

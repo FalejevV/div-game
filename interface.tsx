@@ -26,7 +26,7 @@ export interface IUser{
 
 export interface IHelpers{
     bug:number,
-    rat:number,
+    mouse:number,
     bugHorde:number,
     cat:number,
     juniorDeveloper:number,

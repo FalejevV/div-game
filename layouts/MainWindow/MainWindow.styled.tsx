@@ -10,5 +10,16 @@ export const MainContainer = styled(Container)`
     flex-direction: column;
     align-items: center;
     gap:10px;
-    margin: 0 auto;
+    flex: 1 auto;
+`
+
+export const MainWrapped = styled.div`
+    width:100%;
+    max-width:100vw;
+    height:100vh;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+    align-items: center;
 `
