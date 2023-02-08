@@ -25,14 +25,18 @@ export const DivObjectBoardContainer = styled.div`
     }
 `
 
-export const DivObjectItself = styled.div<IPosition>`
+export const DivObjectItself = styled.div.attrs((props:IPosition) => ({
+        style:{
+            left: props.left+"%" || "30%",
+            top: props.top+"%" || "30%",
+        }
+    }))<IPosition>`
+    
     width:50%;
     aspect-ratio: 2 / 1;
     background-color:#ffffff2c;
     border:2px solid black;
     position:absolute;
     transition: top 0.3s, left 0.3s;
-    left: ${({ left }) => left+"%" || '30%'};
-    top: ${({ top }) => top+"%" || '30%'};
     transform: translate(-50%, -50%);
 `

@@ -22,7 +22,11 @@ export const ProgressBarText = styled.p`
     z-index: 3;
 `
 
-export const ProgressBarIndicator = styled.div<ICount>`
+export const ProgressBarIndicator = styled.div.attrs((props:ICount) => ({
+    style:{
+        width: `calc(${props.count} * 4%)`
+    }
+    }))<ICount>`
     position: absolute;
     max-width: 100%;
     height:100%;
@@ -31,9 +35,6 @@ export const ProgressBarIndicator = styled.div<ICount>`
     background-color: #8cfe95;
     transition: width 0.2s;
     width:0%;
-    ${({ count }) => count && `
-        width: calc(${count} * 4%);
-    `}
 `
 
 export const ActionStats = styled.div`

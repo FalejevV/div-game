@@ -11,6 +11,7 @@ export default function Home() {
         <title>Let&apos;s center a DIV</title>
         <meta name="description" content="Website about centering a div. endlessly..." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta http-equiv="content-language" content="en-us"/>
       </Head>
 
       <MainWindow />
