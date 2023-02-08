@@ -47,7 +47,7 @@ function ProgressBar(){
     return(
         <ProgressBarContainer>
             <ActionStats>
-                <ActionText>{Math.floor(((userDataSelector.keyLevel*1.28)+1) * 5)}$ / DIV</ActionText>
+                <ActionText>{Math.floor(((userDataSelector.keyLevel*(userDataSelector.keyLevel+1.5))+1) * 5)}$ / DIV</ActionText>
                 <ActionText>{getPayWorkers()}$ / sec</ActionText>
             </ActionStats>
 

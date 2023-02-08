@@ -8,7 +8,7 @@ const upgrades:IUpgrade[] = [
         text:"DIV price increase",
         level:"keyLevel",
         price:5,
-        priceMultiplier:1.84
+        priceMultiplier:1.24
     },
 
     {

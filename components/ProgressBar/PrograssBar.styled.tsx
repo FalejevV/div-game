@@ -29,7 +29,7 @@ export const ProgressBarIndicator = styled.div<ICount>`
     left:0px;
     top:0px;
     background-color: #8cfe95;
-    transition: width 0.3s;
+    transition: width 0.2s;
     width:0%;
     ${({ count }) => count && `
         width: calc(${count} * 4%);

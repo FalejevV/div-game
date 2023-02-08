@@ -10,6 +10,8 @@ let initialState:IHelpers = {
     juniorDeveloper:0,
     seniorDeveloper:0,
     AI:0,
+    unknownGem:0,
+    mystic:0,
 }
 
 

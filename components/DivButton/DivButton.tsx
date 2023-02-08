@@ -68,8 +68,9 @@ function DivButton(){
         }
     },[keyPress]);
 
+    // Pay when progress filled
     function payDivCentered(){
-        let payout = Math.floor(((userDataSelector.keyLevel*1.28)+1) * 5);
+        let payout = Math.floor(((userDataSelector.keyLevel*(userDataSelector.keyLevel+1.5))+1) * 5);
         dispatch(setMoney(payout));
     }
 

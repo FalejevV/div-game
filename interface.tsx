@@ -32,6 +32,8 @@ export interface IHelpers{
     juniorDeveloper:number,
     seniorDeveloper:number,
     AI:number,
+    unknownGem:number,
+    mystic:number,
 }
 
 export interface IButton{

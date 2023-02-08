@@ -4,7 +4,7 @@ import { IHelper } from "interface";
 
 const helpers:IHelper[] = [
     {
-        text:"Another bug...",
+        text:"A bug.",
         helper:"bug",
         price:15,
         priceMultiplier:1.36,
@@ -15,8 +15,8 @@ const helpers:IHelper[] = [
     {
         text:"Mouse",
         helper:"mouse",
-        price:40,
-        priceMultiplier:1.36,
+        price:79,
+        priceMultiplier:1.56,
         imageAlt:"mouse helper",
         imageSrc:"/img/helpers/mouse.png",
         DPS:3
@@ -24,8 +24,8 @@ const helpers:IHelper[] = [
     {
         text:"More bugs...",
         helper:"bugHorde",
-        price:150,
-        priceMultiplier:1.36,
+        price:433,
+        priceMultiplier:1.66,
         imageAlt:"bug horde helper",
         imageSrc:"/img/helpers/bugs.png",
         DPS:17
@@ -33,12 +33,58 @@ const helpers:IHelper[] = [
     {
         text:"Cat",
         helper:"cat",
-        price:450,
-        priceMultiplier:1.36,
+        price:1590,
+        priceMultiplier:1.76,
         imageAlt:"cat helper",
         imageSrc:"/img/helpers/cat.png",
         DPS:37
-    }
+    },
+    {
+        text:"Junior dev.",
+        helper:"juniorDeveloper",
+        price:11000,
+        priceMultiplier:1.80,
+        imageAlt:"junior dev helper",
+        imageSrc:"/img/helpers/junior.png",
+        DPS:95
+    },
+    {
+        text:"Senior dev.",
+        helper:"seniorDeveloper",
+        price:55000,
+        priceMultiplier:1.86,
+        imageAlt:"senior dev helper",
+        imageSrc:"/img/helpers/senior.png",
+        DPS:292
+    },
+    {
+        text:"AI",
+        helper:"AI",
+        price:100000,
+        priceMultiplier:1.865,
+        imageAlt:"AI helper",
+        imageSrc:"/img/helpers/AI.png",
+        DPS:1900
+    },
+    {
+        text:"Unknown gem",
+        helper:"unknownGem",
+        price:2500000,
+        priceMultiplier:1.865,
+        imageAlt:"Unknown gem helper",
+        imageSrc:"/img/helpers/unknown-gem.gif",
+        DPS:11000
+    },
+    {
+        text:"Mystic",
+        helper:"mystic",
+        price:8500000,
+        priceMultiplier:1.865,
+        imageAlt:"Mystic helper",
+        imageSrc:"/img/helpers/mystic.gif",
+        DPS:65000
+    },
+
 
 ]
 
