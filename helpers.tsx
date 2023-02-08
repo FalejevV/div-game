@@ -63,7 +63,7 @@ const helpers:IHelper[] = [
         price:100000,
         priceMultiplier:1.865,
         imageAlt:"AI helper",
-        imageSrc:"/img/helpers/AI.png",
+        imageSrc:"/img/helpers/ai.png",
         DPS:1900
     },
     {
