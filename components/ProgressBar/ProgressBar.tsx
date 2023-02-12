@@ -10,19 +10,7 @@ function ProgressBar(){
     const [counter,setCounter] = useState(0);
     const userDataSelector = useAppSelector((state: RootState) => state.userData);
     const divDataSelector = useAppSelector((state:RootState) => state.divData);
-    const helperDataSelector = useAppSelector((state:RootState) => state.helperData);
     const [progressText, setProgressText] = useState<string>("Need to center it!");
-
-    function getPayWorkers(){
-            let totalPay = 0;
-            for (const [key, value] of Object.entries(helperDataSelector)) {
-                let foundHelper:IHelper | undefined = helpers.find(helper => helper.helper === key) || undefined;
-                if(foundHelper !== undefined){
-                    totalPay += foundHelper.DPS * value;
-                }
-            }
-            return Math.floor(totalPay + (totalPay * userDataSelector.helperLevel * 0.15));
-    };
 
     useEffect(() => {
         let divisor = userDataSelector.failLevel > 5 ? 5 : 7;
@@ -48,7 +36,6 @@ function ProgressBar(){
         <ProgressBarContainer>
             <ActionStats>
                 <ActionText>{Math.floor(((userDataSelector.keyLevel*(userDataSelector.keyLevel+1.5))+1) * 5)}$ / DIV</ActionText>
-                <ActionText>{getPayWorkers()}$ / sec</ActionText>
             </ActionStats>
 
             <ProgressBarText>{progressText}</ProgressBarText>

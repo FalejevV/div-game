@@ -88,6 +88,18 @@ const helpers:IHelper[] = [
 
 ]
 
+export const helperActionGifs:string[]= [
+    "/img/helpers-action/bug-action.gif",
+    "/img/helpers-action/mouse-action.gif",
+    "/img/helpers-action/bughorde-action.gif",
+    "/img/helpers-action/cat-action.gif",
+    "/img/helpers-action/junior-action.gif",
+    "/img/helpers-action/senior-action.gif",
+    "/img/helpers-action/ai-action.gif",
+    "/img/helpers-action/gem-action.gif",
+    "/img/helpers-action/mystic-action.gif",
+]
+
 export const unknownHelperImage = '/img/helpers/unknown.png'
 
 export default helpers;
