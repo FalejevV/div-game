@@ -6,7 +6,8 @@ export interface IPosition{
 export interface IDiv{
     left:number,
     top:number,
-    fails:number
+    fails:number,
+    smoothMove:boolean
 }
 
 export interface ICount{

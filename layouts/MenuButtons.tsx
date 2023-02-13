@@ -3,6 +3,7 @@ import { toggleShop } from "app/slices/menuData";
 import { RootState } from "app/store";
 import ImageButton from "components/ImageButton/ImageButton";
 import MoneyIndicator from "components/MoneyIndicator/MoneyIndicator";
+import ToggleAnimations from "components/ToggleAnimations/ToggleAnimations";
 import styled from "styled-components";
 
 const ButtonsContainer = styled.div`
@@ -28,6 +29,7 @@ function MenuButtons(){
                 <ImageButton title={"Shop"} alt={"Toggle shop"} offImage={"/img/shop/cart.png"} onImage={"/img/shop/cart-press.png"} istoggled={menuDataSelector.shop} function={() => dispatch(toggleShop())} />
                 <MoneyIndicator />
             </CartButtonContainer>
+            <ToggleAnimations />
         </ButtonsContainer>
     )
 }

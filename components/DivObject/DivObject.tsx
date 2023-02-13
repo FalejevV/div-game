@@ -7,7 +7,7 @@ function DivObject(){
     let divData = useAppSelector((state:RootState) => state.divData);
     return(
         <DivObjectBoardContainer>
-            <DivObjectItself left={divData.left} top={divData.top}/>
+            <DivObjectItself istoggled={divData.smoothMove ? 1 : undefined} left={divData.left} top={divData.top}/>
         </DivObjectBoardContainer>  
 
     )

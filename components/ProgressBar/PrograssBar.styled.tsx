@@ -1,5 +1,5 @@
-import { ICount } from "interface";
-import styled from "styled-components";
+import { ICount, IToggle } from "interface";
+import styled, { css } from "styled-components";
 
 export const ProgressBarContainer = styled.div`
     max-width: 450px;
@@ -26,7 +26,7 @@ export const ProgressBarIndicator = styled.div.attrs((props:ICount) => ({
     style:{
         width: `calc(${props.count} * 4%)`
     }
-    }))<ICount>`
+    }))<ICount & IToggle>`
     position: absolute;
     max-width: 100%;
     height:100%;
@@ -35,6 +35,13 @@ export const ProgressBarIndicator = styled.div.attrs((props:ICount) => ({
     background-color: #8cfe95;
     transition: width 0.2s;
     width:0%;
+
+    transition: all 0s;
+
+    ${({ istoggled }) => istoggled && css`
+        transition: all 0.3s;
+    `}
+
 `
 
 export const ActionStats = styled.div`

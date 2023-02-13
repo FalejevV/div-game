@@ -39,7 +39,7 @@ function ProgressBar(){
             </ActionStats>
 
             <ProgressBarText>{progressText}</ProgressBarText>
-            <ProgressBarIndicator count={divDataSelector.fails}></ProgressBarIndicator>
+            <ProgressBarIndicator istoggled={divDataSelector.smoothMove ? 1 : undefined} count={divDataSelector.fails}></ProgressBarIndicator>
         </ProgressBarContainer>
     )
 }
