@@ -22,8 +22,14 @@ const divSlice = createSlice({
         toggleSmooth(state){
             state.smoothMove = !state.smoothMove;
         },
+        loadDivSlice(state, action:PayloadAction<IDiv>){
+            state.left = action.payload.left;
+            state.top =action.payload.top;
+            state.fails = action.payload.fails;
+            state.smoothMove = action.payload.smoothMove;
+        }
     }
 })
 
-export const { setPosition, setFails, toggleSmooth } = divSlice.actions;
+export const { setPosition, setFails, toggleSmooth, loadDivSlice } = divSlice.actions;
 export default divSlice.reducer

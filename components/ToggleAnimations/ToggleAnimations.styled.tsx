@@ -6,6 +6,7 @@ export const ToggleAnimContainer = styled.div`
     display: flex;
     align-items: center;
     gap:15px;
+    cursor: pointer;
 `
 
 export const ToggleAnimText = styled.p`
@@ -14,7 +15,7 @@ export const ToggleAnimText = styled.p`
 
 export const ToggleAnimCheckbox = styled.div<IToggle>`
     cursor: pointer;
-    width:50px;
+    width:40px;
     height:25px;
     background-color: gray;
     position: relative;

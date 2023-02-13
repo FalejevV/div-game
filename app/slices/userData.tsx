@@ -18,10 +18,16 @@ const userSlice = createSlice({
         },
         upgradeLevel(state, action:PayloadAction<keyof IUser>){
             state[action.payload] += 1;
+        },
+        loadUserSlice(state, action:PayloadAction<IUser>){
+            state.failLevel = action.payload.failLevel;
+            state.money = action.payload.money;
+            state.keyLevel = action.payload.keyLevel;
+            state.helperLevel = action.payload.helperLevel;
         }
     }
 })
 
-export const { setMoney, upgradeLevel} = userSlice.actions;
+export const { setMoney, upgradeLevel, loadUserSlice } = userSlice.actions;
 
 export default userSlice.reducer;

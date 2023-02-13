@@ -9,9 +9,9 @@ function ToggleAnimations(){
     let divDataSelector = useAppSelector((state:RootState) => state.divData);
     let dispatch = useAppDispatch();
     return(
-        <ToggleAnimContainer>
-            <ToggleAnimText>Smooth </ToggleAnimText>
-            <ToggleAnimCheckbox onClick={() => dispatch(toggleSmooth())} istoggled={divDataSelector.smoothMove ? 1 : undefined}></ToggleAnimCheckbox>
+        <ToggleAnimContainer onClick={() => dispatch(toggleSmooth())} >
+            <ToggleAnimText>{divDataSelector.smoothMove ? "Smooth" : "Instant"}</ToggleAnimText>
+            <ToggleAnimCheckbox istoggled={divDataSelector.smoothMove ? 1 : undefined}></ToggleAnimCheckbox>
         </ToggleAnimContainer>
     )
 }
