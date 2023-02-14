@@ -5,6 +5,7 @@ import { HelperInfoText } from "components/HelperItem/HelperItem.styled";
 import { HelpersDisplayContainer, HelpersDisplayTotalContainer, HelpersDisplayTotalItem, HelpersPayIndicator } from "./HelpersDisplay.styled";
 import helpers, {helperActionGifs} from "helpers";
 import { IHelper } from "interface";
+import { nanoid } from "@reduxjs/toolkit";
 
 
 function HelpersDisplay(){
@@ -17,7 +18,7 @@ function HelpersDisplay(){
         for (const [key, value] of Object.entries(helperDataSelector)) {
             if(value > 0){
                 helpersArray.push(
-                    <HelpersDisplayTotalItem>
+                    <HelpersDisplayTotalItem key={nanoid()}>
                         <HelperAction image={helperActionGifs[index]}  />
                         <HelperInfoText>{value}</HelperInfoText>
                     </HelpersDisplayTotalItem>

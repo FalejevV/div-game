@@ -9,10 +9,11 @@ function ImageButton(props:{
     onImage:string,
     function:Function,
     istoggled:boolean,
+    reff?: any
 }){
 
     return(
-        <ImageButtonContainer istoggled={props.istoggled ? 1 : undefined } onClick={() => props.function()}>
+        <ImageButtonContainer ref={props.reff} istoggled={props.istoggled ? 1 : undefined } onClick={() => props.function()}>
             <ImageButtonOFF  alt={props.alt} src={props.offImage} />
             <ImageButtonON  alt={props.alt} src={props.onImage} />
         </ImageButtonContainer>

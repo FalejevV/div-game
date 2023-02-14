@@ -1,18 +1,22 @@
 import { useAppDispatch, useAppSelector } from "app/hooks";
 import { RootState } from "app/store";
 import ImageButton from "components/ImageButton/ImageButton";
-import { SaveButtonContainer } from "./SaveButton.styled";
+import { SaveButtonContainer, SaveStatusText } from "./SaveButton.styled";
 import CryptoJS from "crypto-js";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { loadDivSlice } from "app/slices/divData";
 import { loadHelperSlice } from "app/slices/helperData";
 import { loadUserSlice } from "app/slices/userData";
+import React from "react";
 
 
 function SaveButton(){
     let userDataSelector = useAppSelector((state:RootState) => state.userData);
     let divDataSelector = useAppSelector((state:RootState) => state.divData);
     let helperDataSelector = useAppSelector((state:RootState) => state.helperData);
+    let [statusText,setStatusText] = useState("");
+    let [statusDebounce, setStatusDebounce] = useState(false);
+    const buttonRef = React.useRef<HTMLButtonElement>(null);
     let dispatch = useAppDispatch();
     const [buttonToggle, setButtonToggle] = useState(false);
 
@@ -21,6 +25,7 @@ function SaveButton(){
             return;
         }
         setButtonToggle(true);
+        
         var cipherText = CryptoJS.AES.encrypt(JSON.stringify({
             div :   divDataSelector,
             helper: helperDataSelector,
@@ -29,6 +34,7 @@ function SaveButton(){
         document.cookie = `divGame=${cipherText}; expires=Fri, 31 Dec 9999 23:59:59 GMT;path=/;SameSite=Lax`;
 
         setTimeout(() => {
+            setStatusText("Saved")!
             setButtonToggle(false);
         },500);
     }
@@ -54,9 +60,32 @@ function SaveButton(){
         }
     },[]);
 
+    useEffect(() => {
+        if(statusText.trim() !== "" && statusDebounce === false){
+            setStatusDebounce(true);
+            setTimeout(() => {
+                setStatusText("");
+                setStatusDebounce(false);
+            },1000);
+        }
+    },[statusText,statusDebounce]);
+
+    useEffect(() => {
+        let autoSave = setInterval(() => {
+            if(buttonRef.current){
+                buttonRef.current.click()
+            }
+        },60000);
+
+        return () => {
+            clearInterval(autoSave);
+        }
+    },[]);
+
     return(
         <SaveButtonContainer>
-            <ImageButton title={"Save"} alt={"save"} offImage={"/img/save/save-icon.png"} onImage={"/img/save/save-icon-press.png"} function={() => saveData()} istoggled={buttonToggle} />
+            <ImageButton reff={buttonRef} title={"Save"} alt={"save"} offImage={"/img/save/save-icon.png"} onImage={"/img/save/save-icon-press.png"} function={() => saveData()} istoggled={buttonToggle} />
+            {statusText.trim() !== "" && <SaveStatusText>{statusText}</SaveStatusText>}
         </SaveButtonContainer>
     )
 }
