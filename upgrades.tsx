@@ -8,7 +8,7 @@ const upgrades:IUpgrade[] = [
         text:"DIV price increase",
         level:"keyLevel",
         price:5,
-        priceMultiplier:1.24
+        priceMultiplier:1.94
     },
 
     {
@@ -39,9 +39,30 @@ export const keyLevelImages:{
         press:"/img/enter-press.png"
     },
     {
-        default:"/img/enterupgrades/Bronse-enter.png",
-        press:"/img/enterupgrades/Bronse-enter-press.png"
+        default:"/img/enterupgrades/Key0.png",
+        press:"/img/enterupgrades/Key0-press.png"
+    },
+    {
+        default:"/img/enterupgrades/Key1.png",
+        press:"/img/enterupgrades/Key1-press.png"
+    },
+    {
+        default:"/img/enterupgrades/Key2.png",
+        press:"/img/enterupgrades/Key2-press.png"
+    },
+    {
+        default:"/img/enterupgrades/Key3.png",
+        press:"/img/enterupgrades/Key3-press.png"
+    },
+    {
+        default:"/img/enterupgrades/Key4.png",
+        press:"/img/enterupgrades/Key4-press.png"
+    },
+    {
+        default:"/img/enterupgrades/Key5.gif",
+        press:"/img/enterupgrades/Key5-press.gif"
     }
+    
 ]
 
 

@@ -109,8 +109,8 @@ function DivButton(){
 
     return(
         <DivBittonContainer istoggled={keyPress ? 1 : undefined } onClick={moveDiv}>
-            <DivButtonImage alt='enter-button' src={keyLevelImages[userDataSelector.keyLevel]?.default || keyLevelImages[0].default}/>
-            <DivButtonImagePress alt='enter-button' width="240" height="120" src={keyLevelImages[userDataSelector.keyLevel]?.press || keyLevelImages[0].press} />
+            <DivButtonImage alt='enter-button' src={keyLevelImages[Math.floor(userDataSelector.keyLevel/35)]?.default || keyLevelImages[0].default}/>
+            <DivButtonImagePress alt='enter-button' width="240" height="120" src={keyLevelImages[Math.floor(userDataSelector.keyLevel/35)]?.press || keyLevelImages[0].press} />
         </DivBittonContainer>
     )
 }
