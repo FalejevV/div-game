@@ -35,7 +35,7 @@ function HelperItem(props:{
             {!props.unknown &&
             <HelperPurchaseContainer>
                     <HelperInfoTextContainer>
-                        <HelperInfoText>{helperDataSelector[props.helper.helper]} qty. ({helperDataSelector[props.helper.helper]* props.helper.DPS} $/s)</HelperInfoText>
+                        <HelperInfoText>{helperDataSelector[props.helper.helper]} qty. ({(helperDataSelector[props.helper.helper]* props.helper.DPS).toLocaleString(['ban', 'id'])} $/s)</HelperInfoText>
                         <HelperInfoText>{getPrice().toLocaleString(['ban', 'id'])} $</HelperInfoText>
                     </HelperInfoTextContainer>
                 <HelperBuyImageButton onClick={hireHelper} istoggled={userDataSelector.money >= getPrice() ? 1 : undefined} src="/img/helpers/HireButton.png"/>
