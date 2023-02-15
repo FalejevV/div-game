@@ -6,9 +6,13 @@ import { MoneyIndicatorContainer, MoneyIndicatorText } from "./MoneyIndicator.st
 
 function MoneyIndicator(){
     let userDataSelector = useAppSelector((state:RootState) => state.userData);
+
+    function localeMoney(){
+        return (userDataSelector.money.toLocaleString(['ban', 'id']))
+    }
     return(
         <MoneyIndicatorContainer>
-            <MoneyIndicatorText>{userDataSelector.money}$</MoneyIndicatorText>
+            <MoneyIndicatorText>{localeMoney()}$</MoneyIndicatorText>
         </MoneyIndicatorContainer>
     )
 }

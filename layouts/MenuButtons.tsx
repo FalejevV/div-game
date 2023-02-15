@@ -19,6 +19,7 @@ const CartButtonContainer = styled.div`
     display: flex;
     align-items: center;
     gap:10px;
+    position: relative;
 `
 
 const RightButtonsContainer = styled.div`

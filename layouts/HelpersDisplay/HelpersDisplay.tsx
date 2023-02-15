@@ -38,7 +38,7 @@ function HelpersDisplay(){
                 totalPay += foundHelper.DPS * value;
             }
         }
-        return Math.floor(totalPay + (totalPay * userDataSelector.helperLevel * 0.15));
+        return Math.floor(totalPay + (totalPay * userDataSelector.helperLevel * 0.15)).toLocaleString(['ban', 'id']);
         };
 
 
@@ -47,7 +47,7 @@ function HelpersDisplay(){
         {getHelpers().length > 0 && 
             <HelpersDisplayContainer>
                 <HelpersDisplayTotalContainer>
-                    <HelpersPayIndicator>{getPayWorkers() + `$/ sec`}</HelpersPayIndicator>
+                    <HelpersPayIndicator>{getPayWorkers() + `$ / sec`}</HelpersPayIndicator>
                     {getHelpers()}
                 </HelpersDisplayTotalContainer>
             </HelpersDisplayContainer>

@@ -7,10 +7,17 @@ export const ToggleAnimContainer = styled.div`
     align-items: center;
     gap:15px;
     cursor: pointer;
+    position: relative;
+    height: 70px;
+    padding-top:8px;
 `
 
 export const ToggleAnimText = styled.p`
     font-size: 16px;
+    position:absolute;
+    top:5px;
+    left:50%;
+    transform: translateX(-50%);
 `
 
 export const ToggleAnimCheckbox = styled.div<IToggle>`

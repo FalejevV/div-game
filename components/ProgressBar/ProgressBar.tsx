@@ -32,10 +32,15 @@ function ProgressBar(){
         }
     },[divDataSelector.fails]);
 
+
+    function localeMoney(){
+        return (Math.floor(((userDataSelector.keyLevel*(userDataSelector.keyLevel+1.5))+1) * 5).toLocaleString(['ban', 'id']))
+    }
+
     return(
         <ProgressBarContainer>
             <ActionStats>
-                <ActionText>{Math.floor(((userDataSelector.keyLevel*(userDataSelector.keyLevel+1.5))+1) * 5)}$ / DIV</ActionText>
+                <ActionText>{localeMoney()}$ / DIV</ActionText>
             </ActionStats>
 
             <ProgressBarText>{progressText}</ProgressBarText>
