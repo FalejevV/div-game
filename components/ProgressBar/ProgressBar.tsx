@@ -13,7 +13,7 @@ function ProgressBar(){
     const [progressText, setProgressText] = useState<string>("Need to center it!");
 
     useEffect(() => {
-        let divisor = userDataSelector.failLevel > 5 ? 5 : 7;
+        let divisor = 10;
 
         setCounter(prev => prev + 1);
         if(counter % divisor === 0 && divDataSelector.fails > 1 && divDataSelector.fails < 25){

@@ -3,10 +3,11 @@ import { IUser } from "interface";
 
 
 let initialState:IUser = {
-    money:100000000000000,
+    money:0,
     failLevel:0,
     keyLevel:0,
     helperLevel: 0,
+    savior:0,
 }
 
 const userSlice = createSlice({

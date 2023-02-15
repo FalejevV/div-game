@@ -27,6 +27,17 @@ const upgrades:IUpgrade[] = [
         level:"helperLevel",
         price:150,
         priceMultiplier:12.12
+    },
+
+    {
+        imageAlt:"True savior",
+        imageSrc:"/img/shop/Savior.png",
+        text:"World savior!",
+        level:"savior",
+        price:999000000000000,
+        priceText:"999 Trillion",
+        oneTimer:true,
+        priceMultiplier:12.12
     }
 ]
 

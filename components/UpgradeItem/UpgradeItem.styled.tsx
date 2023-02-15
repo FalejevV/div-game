@@ -23,6 +23,10 @@ export const UpgradeText = styled.p`
     color:#69362E;
     padding: 5px 0px;
     flex:1 auto;
+
+    @media(max-width:410px){
+        font-size: 16px;
+    }
 `
 
 export const UpgradePurchaseImage = styled.img<IToggle>`
@@ -44,6 +48,7 @@ export const UpgradePurchaseImage = styled.img<IToggle>`
         }
         opacity: 1;
     `}
+    
 `
 
 export const UpgradePurchaseImageContainer = styled.div`

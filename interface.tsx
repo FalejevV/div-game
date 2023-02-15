@@ -23,6 +23,7 @@ export interface IUser{
     failLevel:number,
     keyLevel:number,
     helperLevel:number,
+    savior:number,
 }
 
 export interface IHelpers{
@@ -49,6 +50,8 @@ export interface IUpgrade{
     level:keyof IUser,
     price:number,
     priceMultiplier:number,
+    priceText?:string,
+    oneTimer?:boolean
 }
 
 
