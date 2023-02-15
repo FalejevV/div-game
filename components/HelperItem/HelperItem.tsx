@@ -30,13 +30,13 @@ function HelperItem(props:{
             <HelperItemIcon src={props.unknown ? unknownHelperImage : props.helper.imageSrc} alt={props.unknown ? "unknown helper" : props.helper.imageAlt}/>
             <HelperTextContainer>
                 <HelperText>{props.unknown ? "???" : props.helper.text}</HelperText>
-                <HelperInfoText>{props.unknown ? "???" : props.helper.DPS} $/s</HelperInfoText>
+                <HelperInfoText>{props.unknown ? "???" : props.helper.DPS.toLocaleString(['ban', 'id'])} $/s</HelperInfoText>
             </HelperTextContainer>
             {!props.unknown &&
             <HelperPurchaseContainer>
                     <HelperInfoTextContainer>
                         <HelperInfoText>{helperDataSelector[props.helper.helper]} qty. ({helperDataSelector[props.helper.helper]* props.helper.DPS} $/s)</HelperInfoText>
-                        <HelperInfoText>{getPrice()} $</HelperInfoText>
+                        <HelperInfoText>{getPrice().toLocaleString(['ban', 'id'])} $</HelperInfoText>
                     </HelperInfoTextContainer>
                 <HelperBuyImageButton onClick={hireHelper} istoggled={userDataSelector.money >= getPrice() ? 1 : undefined} src="/img/helpers/HireButton.png"/>
             </HelperPurchaseContainer>
