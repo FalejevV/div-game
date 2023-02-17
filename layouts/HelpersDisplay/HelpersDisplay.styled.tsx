@@ -7,7 +7,7 @@ export const HelpersDisplayContainer = styled.div`
     display: flex;
     flex-direction: column;
     gap:20px;
-    padding-bottom: 0px;
+    padding-bottom: 15px;
 `
 
 export const HelpersDisplayTotalContainer = styled.div`
@@ -23,7 +23,6 @@ export const HelpersDisplayTotalContainer = styled.div`
     margin: 0 auto;
     border:4px solid #92978969;
     position: relative;
-
     @media(max-width:995px){
         gap:20px;
         justify-content: space-between;
