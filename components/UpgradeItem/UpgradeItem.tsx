@@ -1,4 +1,5 @@
 import { useAppDispatch, useAppSelector } from "app/hooks";
+import { toggleScene } from "app/slices/divData";
 import { setMoney, upgradeLevel } from "app/slices/userData";
 import { RootState } from "app/store";
 import { IUser } from "interface";
@@ -23,6 +24,9 @@ function UpgradeItem(props:{
         if(userDataSelector.money >= getPrice()){
             dispatch(setMoney(-1 * getPrice()));
             dispatch(upgradeLevel(props.level));
+            if(props.level === "savior"){
+                dispatch(toggleScene(true));
+            }
         }  
     }
 
@@ -42,8 +46,14 @@ function UpgradeItem(props:{
         }
     }
 
+    function toggleSavior(){
+        if(userDataSelector.savior > 0){
+            dispatch(toggleScene(true));
+        }
+    }
+
     return(
-        <UpgradeContainer>
+        <UpgradeContainer onClick={toggleSavior}>
             <UpgradeImage  alt={props.imageAlt} src={props.imageSrc}/>
             <UpgradeText>{props.text}</UpgradeText>
             

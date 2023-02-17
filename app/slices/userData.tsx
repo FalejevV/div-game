@@ -3,7 +3,7 @@ import { IUser } from "interface";
 
 
 let initialState:IUser = {
-    money:55555555,
+    money:1000000000000000,
     failLevel:0,
     keyLevel:0,
     helperLevel: 0,
@@ -25,6 +25,7 @@ const userSlice = createSlice({
             state.money = action.payload.money;
             state.keyLevel = action.payload.keyLevel;
             state.helperLevel = action.payload.helperLevel;
+            state.savior = action.payload.savior;
         }
     }
 })

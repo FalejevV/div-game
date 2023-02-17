@@ -6,6 +6,7 @@ const initialState:IDiv= {
     top:30,
     fails:0,
     smoothMove:true,
+    showScene:false,
 }
 
 const divSlice = createSlice({
@@ -27,9 +28,12 @@ const divSlice = createSlice({
             state.top =action.payload.top;
             state.fails = action.payload.fails;
             state.smoothMove = action.payload.smoothMove;
+        },
+        toggleScene(state,action:PayloadAction<boolean>){
+            state.showScene = action.payload;
         }
     }
 })
 
-export const { setPosition, setFails, toggleSmooth, loadDivSlice } = divSlice.actions;
+export const { setPosition, setFails, toggleSmooth, loadDivSlice, toggleScene } = divSlice.actions;
 export default divSlice.reducer

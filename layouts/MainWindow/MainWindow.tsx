@@ -11,12 +11,14 @@ import helpers from "helpers";
 import { IHelper } from "interface";
 import { setMoney } from "app/slices/userData";
 import HelpersDisplay from "layouts/HelpersDisplay/HelpersDisplay";
+import Savior from "components/Savior/Savior";
 
 
 function MainWindow(){
 
     let helperDataSelector = useAppSelector((state:RootState) => state.helperData);
     let userDataSelector = useAppSelector((state:RootState) => state.userData);
+    let divDataSelector = useAppSelector((state:RootState) => state.divData);
     let dispatch = useAppDispatch();
 
     let timeout:any;
@@ -53,6 +55,8 @@ function MainWindow(){
             </MainContainer>
 
             <HelpersDisplay />
+
+            {divDataSelector.showScene && <Savior />}
         </MainWrapped>
     )
 }

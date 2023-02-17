@@ -7,7 +7,8 @@ export interface IDiv{
     left:number,
     top:number,
     fails:number,
-    smoothMove:boolean
+    smoothMove:boolean,
+    showScene:boolean,
 }
 
 export interface ICount{
