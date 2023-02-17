@@ -14,9 +14,9 @@ export const ShopWindowContainer = styled.div<IToggle>`
     top:calc(-50vh - 500px);
     transition: top 0.5s, opacity 0.7s;
     opacity:0;
-    border:5px solid #69412ece;
+    border:5px solid #929789;
     pointer-events: none;
-
+    box-shadow: 10px 25px 0px 4px rgba(0,0,0,0.3);
     ${({ istoggled }) => istoggled && css`
         top:95px;
         opacity:1;
@@ -28,6 +28,7 @@ export const ShopWindowContainer = styled.div<IToggle>`
 
 
     @media(max-width:500px){
+        box-shadow: 0px 25px 0px 4px rgba(0,0,0,0.3);
         left:0px;
         width:100%;
         max-width:unset;

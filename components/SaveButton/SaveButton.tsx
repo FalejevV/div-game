@@ -3,7 +3,7 @@ import { RootState } from "app/store";
 import ImageButton from "components/ImageButton/ImageButton";
 import { SaveButtonContainer, SaveStatusText } from "./SaveButton.styled";
 import CryptoJS from "crypto-js";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { loadDivSlice } from "app/slices/divData";
 import { loadHelperSlice } from "app/slices/helperData";
 import { loadUserSlice } from "app/slices/userData";
@@ -48,6 +48,9 @@ function SaveButton(){
         let savedCookie = getSaveCookie();
         if(savedCookie !== undefined){
             let bytes  = CryptoJS.AES.decrypt(savedCookie, process.env.customKey || "ass");
+            try{
+
+            
             let originalText = bytes.toString(CryptoJS.enc.Utf8);
             let jsonData = JSON.parse(originalText);
             if(jsonData.div !== undefined && jsonData.helper !== undefined && jsonData.user !== undefined){
@@ -56,6 +59,9 @@ function SaveButton(){
                     dispatch(loadHelperSlice(jsonData.helper));
                     dispatch(loadUserSlice(jsonData.user));
                 }
+            }
+            }catch{
+                
             }
         }
     },[]);

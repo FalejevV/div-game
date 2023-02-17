@@ -12,11 +12,12 @@ export const HelperItemContainer = styled.div`
 
 `
 
-
 export const HelperItemIcon = styled.img`
     width:70px;
     height:70px;
 `
+
+
 export const HelperTextContainer = styled.div`
     display: flex;
     flex-direction: column;
@@ -63,6 +64,4 @@ export const HelperBuyImageButton = styled.img<IToggle>`
             filter:brightness(1.2);
         }
     `}
-
-    
 `

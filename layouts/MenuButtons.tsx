@@ -1,5 +1,5 @@
 import { useAppDispatch, useAppSelector } from "app/hooks";
-import { toggleShop } from "app/slices/menuData";
+import { toggleSettings, toggleShop } from "app/slices/menuData";
 import { RootState } from "app/store";
 import ImageButton from "components/ImageButton/ImageButton";
 import MoneyIndicator from "components/MoneyIndicator/MoneyIndicator";
@@ -39,8 +39,9 @@ function MenuButtons(){
                 <MoneyIndicator />
             </CartButtonContainer>
             <RightButtonsContainer>
-                <ToggleAnimations />
                 <SaveButton />
+
+                <ImageButton title={"Settings"} alt={"Toggle settings"} offImage={"/img/settings.png"} onImage={"/img/settings-press.png"} istoggled={menuDataSelector.settings} function={() => dispatch(toggleSettings())} />
             </RightButtonsContainer>
             
         </ButtonsContainer>

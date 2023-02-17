@@ -32,17 +32,17 @@ function UpgradeItem(props:{
 
     function shortenPrice(){
         let kilos = getPrice() / 1000;
-        if(Math.round(kilos) > 0){
+        if(Math.floor(kilos) > 0){
             let mills = kilos / 1000;
-            if(Math.round(mills) > 0){
+            if(Math.floor(mills) > 0){
                 let bil = mills / 1000;
-                if(Math.round(bil) > 0){
-                    return Math.round(bil) + "B";
+                if(Math.floor(bil) > 0){
+                    return Math.floor(bil) + "B";
                 }else{ 
-                    return Math.round(mills) + "M";
+                    return Math.floor(mills) + "M";
                 }
             }else{
-                return Math.round(kilos) + "K";
+                return Math.floor(kilos) + "K";
             }
         }else{
             return getPrice();

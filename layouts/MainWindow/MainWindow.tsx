@@ -12,6 +12,7 @@ import { IHelper } from "interface";
 import { setMoney } from "app/slices/userData";
 import HelpersDisplay from "layouts/HelpersDisplay/HelpersDisplay";
 import Savior from "components/Savior/Savior";
+import SettingsWindow from "layouts/SettingsWindow/SettingsWindow";
 
 
 function MainWindow(){
@@ -48,6 +49,7 @@ function MainWindow(){
         <MainWrapped>
             <MainContainer>
                 <ShopWindow />
+                <SettingsWindow />
                 <MenuButtons />
                 <DivObject />
                 <ProgressBar />

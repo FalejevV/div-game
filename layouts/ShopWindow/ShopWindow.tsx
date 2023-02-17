@@ -14,6 +14,7 @@ function ShopWindow(){
     let [currentTab,setCurrentTab] = useState(1);
     let menuDataSelector = useAppSelector((state:RootState) => state.menuData);
     let dispatch = useAppDispatch();
+    
     function toggleTab(value:number){
         setCurrentTab(prev => {
             if(prev === value){

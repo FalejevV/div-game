@@ -5,7 +5,7 @@ import HelperItem from "components/HelperItem/HelperItem";
 import { nanoid } from "@reduxjs/toolkit";
 import { useAppSelector } from "app/hooks";
 import { RootState } from "app/store";
-import { ReactElement } from "react";
+import { ReactElement, useMemo } from "react";
 
 export const HelpersContainer = styled.div`
     width:100%;
@@ -22,7 +22,7 @@ export const HelpersContainer = styled.div`
 function HelpersTab(){
 
     let helperDataSelector = useAppSelector((state:RootState) => state.helperData);
-    let userDataSelector = useAppSelector((state:RootState) => state.userData);
+    let menuDataSelector = useAppSelector((state:RootState) => state.menuData);
     function getHelperBefore(helper: keyof IHelpers){
         let prevHelper = undefined;
         for (const [key, value] of Object.entries(helperDataSelector)) {
@@ -60,7 +60,7 @@ function HelpersTab(){
     }
     return (
         <HelpersContainer>
-            {displayHelpers()}
+            {menuDataSelector.shop && displayHelpers()}
         </HelpersContainer>
     )
 }
