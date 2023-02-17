@@ -90,7 +90,7 @@ export const TextSaviorContainer = styled.div`
     width:100%;
     max-width: 400px;
     padding:30px;
-    bottom: 60vh;
+    top: 10vh;
     left:50%;
     transform: translateX(-50%);
     display: flex;

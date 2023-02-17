@@ -3,7 +3,7 @@ import { IUser } from "interface";
 
 
 let initialState:IUser = {
-    money:1000000000000000,
+    money:0,
     failLevel:0,
     keyLevel:0,
     helperLevel: 0,

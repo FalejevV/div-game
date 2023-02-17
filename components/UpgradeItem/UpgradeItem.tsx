@@ -30,6 +30,25 @@ function UpgradeItem(props:{
         }  
     }
 
+    function shortenPrice(){
+        let kilos = getPrice() / 1000;
+        if(Math.round(kilos) > 0){
+            let mills = kilos / 1000;
+            if(Math.round(mills) > 0){
+                let bil = mills / 1000;
+                if(Math.round(bil) > 0){
+                    return Math.round(bil) + "B";
+                }else{ 
+                    return Math.round(mills) + "M";
+                }
+            }else{
+                return Math.round(kilos) + "K";
+            }
+        }else{
+            return getPrice();
+        }
+    }
+
     function getPrice(){
         return Math.floor((userDataSelector[props.level] * (props.price * props.priceMultiplier * (userDataSelector[props.level]/1.65)) + props.price));
     }
@@ -61,7 +80,7 @@ function UpgradeItem(props:{
             <UpgradePurchaseImageContainer>
                 <UpgradeInfoContainer>
                     <UpgradeLevelText>{userDataSelector[props.level]} lvl.</UpgradeLevelText>
-                    <UpgradePriceText>{props.priceText !== undefined ? props.priceText : getPrice().toLocaleString(['ban', 'id'])} $</UpgradePriceText>
+                    <UpgradePriceText>{props.priceText !== undefined ? props.priceText : shortenPrice()} $</UpgradePriceText>
                 </UpgradeInfoContainer>
                 <UpgradePurchaseImage onClick={purchaseUpgrade} istoggled={userDataSelector.money >= getPrice() ? 1 : undefined } alt="purchase upgrade" src="/img/shop/UpgradePurchaseButtonIcon.png"/>
             </UpgradePurchaseImageContainer>

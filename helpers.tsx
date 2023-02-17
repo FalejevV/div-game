@@ -15,8 +15,8 @@ const helpers:IHelper[] = [
     {
         text:"Mouse",
         helper:"mouse",
-        price:79,
-        priceMultiplier:1.56,
+        price:1500,
+        priceMultiplier:1.36,
         imageAlt:"mouse helper",
         imageSrc:"/img/helpers/mouse.png",
         DPS:3
@@ -24,8 +24,8 @@ const helpers:IHelper[] = [
     {
         text:"More bugs...",
         helper:"bugHorde",
-        price:433,
-        priceMultiplier:1.66,
+        price:85000,
+        priceMultiplier:1.36,
         imageAlt:"bug horde helper",
         imageSrc:"/img/helpers/bugs.png",
         DPS:17
@@ -33,59 +33,57 @@ const helpers:IHelper[] = [
     {
         text:"Cat",
         helper:"cat",
-        price:1590,
-        priceMultiplier:1.76,
+        price:940000,
+        priceMultiplier:1.36,
         imageAlt:"cat helper",
         imageSrc:"/img/helpers/cat.png",
-        DPS:37
+        DPS:174
     },
     {
         text:"Junior dev.",
         helper:"juniorDeveloper",
-        price:11000,
-        priceMultiplier:1.80,
+        price:25000000,
+        priceMultiplier:1.36,
         imageAlt:"junior dev helper",
         imageSrc:"/img/helpers/junior.png",
-        DPS:95
+        DPS:952
     },
     {
         text:"Senior dev.",
         helper:"seniorDeveloper",
-        price:55000,
-        priceMultiplier:1.86,
+        price:99000000,
+        priceMultiplier:1.36,
         imageAlt:"senior dev helper",
         imageSrc:"/img/helpers/senior.png",
-        DPS:292
+        DPS:8766
     },
     {
         text:"AI",
         helper:"AI",
-        price:100000,
-        priceMultiplier:1.865,
+        price:250000000,
+        priceMultiplier:1.36,
         imageAlt:"AI helper",
         imageSrc:"/img/helpers/ai.png",
-        DPS:1900
+        DPS:36120
     },
     {
         text:"Unknown gem",
         helper:"unknownGem",
-        price:2500000,
-        priceMultiplier:1.865,
+        price:1000000000,
+        priceMultiplier:1.36,
         imageAlt:"Unknown gem helper",
         imageSrc:"/img/helpers/unknown-gem.gif",
-        DPS:11000
+        DPS:192303
     },
     {
         text:"Mystic",
         helper:"mystic",
-        price:8500000,
+        price:10000000000,
         priceMultiplier:1.865,
         imageAlt:"Mystic helper",
         imageSrc:"/img/helpers/mystic.gif",
-        DPS:65000
+        DPS:888888
     },
-
-
 ]
 
 export const helperActionGifs:string[]= [

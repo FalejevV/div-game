@@ -25,6 +25,26 @@ function HelperItem(props:{
             dispatch(addHelper(props.helper.helper));
         }  
     }
+    
+    function shortenPrice(){
+        let kilos = getPrice() / 1000;
+        if(Math.round(kilos) > 0){
+            let mills = kilos / 1000;
+            if(Math.round(mills) > 0){
+                let bil = mills / 1000;
+                if(Math.round(bil) > 0){
+                    return Math.round(bil) + "B";
+                }else{ 
+                    return Math.round(mills) + "M";
+                }
+            }else{
+                return Math.round(kilos) + "K";
+            }
+        }else{
+            return getPrice();
+        }
+    }
+
     return(
         <HelperItemContainer>
             <HelperItemIcon src={props.unknown ? unknownHelperImage : props.helper.imageSrc} alt={props.unknown ? "unknown helper" : props.helper.imageAlt}/>
@@ -35,8 +55,8 @@ function HelperItem(props:{
             {!props.unknown &&
             <HelperPurchaseContainer>
                     <HelperInfoTextContainer>
-                        <HelperInfoText>{helperDataSelector[props.helper.helper]} qty. ({(helperDataSelector[props.helper.helper]* props.helper.DPS).toLocaleString(['ban', 'id'])} $/s)</HelperInfoText>
-                        <HelperInfoText>{getPrice().toLocaleString(['ban', 'id'])} $</HelperInfoText>
+                        <HelperInfoText>{helperDataSelector[props.helper.helper]} qty.</HelperInfoText>
+                        <HelperInfoText>{shortenPrice()} $</HelperInfoText>
                     </HelperInfoTextContainer>
                 <HelperBuyImageButton onClick={hireHelper} istoggled={userDataSelector.money >= getPrice() ? 1 : undefined} src="/img/helpers/HireButton.png"/>
             </HelperPurchaseContainer>
