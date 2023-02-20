@@ -24,6 +24,7 @@ function ShopWindow(){
             }
         })
     }
+    
     return(
         <ShopWindowContainer istoggled={menuDataSelector.shop ? 1 : undefined }>
             <ShopWindowHeaderContainer>

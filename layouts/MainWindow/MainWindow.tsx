@@ -6,7 +6,7 @@ import DivButton from "components/DivButton/DivButton";
 import ShopWindow from "layouts/ShopWindow/ShopWindow";
 import { useAppDispatch, useAppSelector } from "app/hooks";
 import { RootState } from "app/store";
-import { useEffect } from "react";
+import { useEffect, useMemo } from "react";
 import helpers from "helpers";
 import { IHelper } from "interface";
 import { setMoney } from "app/slices/userData";
@@ -18,7 +18,7 @@ import SettingsWindow from "layouts/SettingsWindow/SettingsWindow";
 function MainWindow(){
 
     let helperDataSelector = useAppSelector((state:RootState) => state.helperData);
-    let userDataSelector = useAppSelector((state:RootState) => state.userData);
+    let userHelperLevelSelector = useAppSelector((state:RootState) => state.userData.helperLevel);
     let divDataSelector = useAppSelector((state:RootState) => state.divData);
     let dispatch = useAppDispatch();
 
@@ -34,7 +34,7 @@ function MainWindow(){
                         totalPay += foundHelper.DPS * value;
                     }
                 }
-                dispatch(setMoney(Math.floor(totalPay + (totalPay * userDataSelector.helperLevel * 0.15))));
+                dispatch(setMoney(Math.floor(totalPay + (totalPay * userHelperLevelSelector * 0.15))));
             payWorkers();
             
         },1000);
@@ -43,20 +43,30 @@ function MainWindow(){
         return () => {
             clearTimeout(timeout);
         }
-    },[helperDataSelector, userDataSelector]);
+    },[helperDataSelector, userHelperLevelSelector]);
+
+    let HelpersDisplayMemo = useMemo(() => {
+        return  <HelpersDisplay />;
+    },[helperDataSelector]);
+
+    let ObjectsMemo = useMemo(() => {
+        return <>
+            <ShopWindow />
+            <SettingsWindow />
+            <MenuButtons />
+            <DivObject />
+            <ProgressBar />
+            <DivButton />
+        </>
+    },[]);
 
     return(
         <MainWrapped>
             <MainContainer>
-                <ShopWindow />
-                <SettingsWindow />
-                <MenuButtons />
-                <DivObject />
-                <ProgressBar />
-                <DivButton />
+                {ObjectsMemo}
             </MainContainer>
 
-            <HelpersDisplay />
+           {HelpersDisplayMemo}
 
             {divDataSelector.showScene && <Savior />}
         </MainWrapped>

@@ -6,11 +6,12 @@ import { HelpersDisplayContainer, HelpersDisplayTotalContainer, HelpersDisplayTo
 import helpers, {helperActionGifs} from "helpers";
 import { IHelper } from "interface";
 import { nanoid } from "@reduxjs/toolkit";
+import { useEffect } from "react";
 
 
 function HelpersDisplay(){
     let helperDataSelector = useAppSelector((state:RootState) => state.helperData);
-    const userDataSelector = useAppSelector((state: RootState) => state.userData);
+    const userHelperLevelSelector = useAppSelector((state: RootState) => state.userData.helperLevel);
 
     function getHelpers(){
         let helpersArray = [];
@@ -29,7 +30,6 @@ function HelpersDisplay(){
         return helpersArray;
     }
 
-    
     function getPayWorkers(){
         let totalPay = 0;
         for (const [key, value] of Object.entries(helperDataSelector)) {
@@ -38,7 +38,7 @@ function HelpersDisplay(){
                 totalPay += foundHelper.DPS * value;
             }
         }
-        return Math.floor(totalPay + (totalPay * userDataSelector.helperLevel * 0.15)).toLocaleString(['ban', 'id']);
+        return Math.floor(totalPay + (totalPay * userHelperLevelSelector * 0.15)).toLocaleString(['ban', 'id']);
         };
 
 
