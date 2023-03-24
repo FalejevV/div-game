@@ -6,20 +6,22 @@ import DivButton from "components/DivButton/DivButton";
 import ShopWindow from "layouts/ShopWindow/ShopWindow";
 import { useAppDispatch, useAppSelector } from "app/hooks";
 import { RootState } from "app/store";
-import { useEffect, useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import helpers from "helpers";
 import { IHelper } from "interface";
 import { setMoney } from "app/slices/userData";
 import HelpersDisplay from "layouts/HelpersDisplay/HelpersDisplay";
 import Savior from "components/Savior/Savior";
 import SettingsWindow from "layouts/SettingsWindow/SettingsWindow";
-
+import Cookies from 'js-cookie';
+import WelcomeWindow from "layouts/WelcomeWindow/WelcomeWindow";
 
 function MainWindow(){
 
     let helperDataSelector = useAppSelector((state:RootState) => state.helperData);
     let userHelperLevelSelector = useAppSelector((state:RootState) => state.userData.helperLevel);
     let divDataSelector = useAppSelector((state:RootState) => state.divData);
+    const[welcomeWindowDisplay, setWelcomeWindowDisplay] = useState(0);
     let dispatch = useAppDispatch();
 
     let timeout:any;
@@ -60,8 +62,14 @@ function MainWindow(){
         </>
     },[]);
 
+    useEffect(() => {
+        let welcomeCheck = Cookies.get("welcome-was-shown");
+        setWelcomeWindowDisplay(Number(welcomeCheck) || 1);
+    },[]);
+
     return(
         <MainWrapped>
+            {welcomeWindowDisplay === 1 && <WelcomeWindow  setWelcomeWindowDisplay={setWelcomeWindowDisplay}/>}
             <MainContainer>
                 {ObjectsMemo}
             </MainContainer>
