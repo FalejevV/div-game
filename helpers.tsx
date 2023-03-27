@@ -19,34 +19,34 @@ const helpers:IHelper[] = [
         priceMultiplier:1.36,
         imageAlt:"mouse helper",
         imageSrc:"/img/helpers/mouse.png",
-        DPS:3
+        DPS:190
     },
     {
         text:"More bugs...",
         helper:"bugHorde",
-        price:85000,
+        price:65000,
         priceMultiplier:1.36,
         imageAlt:"bug horde helper",
         imageSrc:"/img/helpers/bugs.png",
-        DPS:17
+        DPS:1557
     },
     {
         text:"Cat",
         helper:"cat",
-        price:940000,
+        price:750000,
         priceMultiplier:1.36,
         imageAlt:"cat helper",
         imageSrc:"/img/helpers/cat.png",
-        DPS:174
+        DPS:55669
     },
     {
         text:"Junior dev.",
         helper:"juniorDeveloper",
         price:25000000,
-        priceMultiplier:1.36,
+        priceMultiplier:1.16,
         imageAlt:"junior dev helper",
         imageSrc:"/img/helpers/junior.png",
-        DPS:952
+        DPS:468500
     },
     {
         text:"Senior dev.",
@@ -55,34 +55,34 @@ const helpers:IHelper[] = [
         priceMultiplier:1.36,
         imageAlt:"senior dev helper",
         imageSrc:"/img/helpers/senior.png",
-        DPS:8766
+        DPS:6850100
     },
     {
         text:"AI",
         helper:"AI",
-        price:250000000,
+        price:8500000000,
         priceMultiplier:1.36,
         imageAlt:"AI helper",
         imageSrc:"/img/helpers/ai.png",
-        DPS:36120
+        DPS:38550200
     },
     {
         text:"Unknown gem",
         helper:"unknownGem",
-        price:1000000000,
+        price:99000000000,
         priceMultiplier:1.36,
         imageAlt:"Unknown gem helper",
         imageSrc:"/img/helpers/unknown-gem.gif",
-        DPS:192303
+        DPS:198554568
     },
     {
         text:"Mystic",
         helper:"mystic",
-        price:10000000000,
+        price:1000000000000,
         priceMultiplier:1.865,
         imageAlt:"Mystic helper",
         imageSrc:"/img/helpers/mystic.gif",
-        DPS:888888
+        DPS:999999999
     },
 ]
 

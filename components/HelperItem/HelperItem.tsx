@@ -33,12 +33,12 @@ function HelperItem(props:{
             if(Math.floor(mills) > 0){
                 let bil = mills / 1000;
                 if(Math.floor(bil) > 0){
-                    return Math.floor(bil) + "B";
+                    return "~" + Math.floor(bil) + "B";
                 }else{ 
-                    return Math.floor(mills) + "M";
+                    return "~" + Math.floor(mills) + "M";
                 }
             }else{
-                return Math.floor(kilos) + "K";
+                return "~" + Math.floor(kilos) + "K";
             }
         }else{
             return getPrice();
