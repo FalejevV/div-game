@@ -65,14 +65,8 @@ function UpgradeItem(props:{
         }
     }
 
-    function toggleSavior(){
-        if(userDataSelector.savior > 0){
-            dispatch(toggleScene(true));
-        }
-    }
-
     return(
-        <UpgradeContainer onClick={toggleSavior}>
+        <UpgradeContainer>
             <UpgradeImage  alt={props.imageAlt} src={props.imageSrc}/>
             <UpgradeText>{props.text}</UpgradeText>
             
